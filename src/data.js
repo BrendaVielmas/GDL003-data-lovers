@@ -5,4 +5,22 @@ const example = () => {
   return 'example';
 };
 
-window.example = example;
+const filtrado = () => {
+  return 'filtrado';
+};
+
+const sortData = () => {
+  return 'sortData';
+};
+
+const computeStats = () => {
+  return 'computeStats';
+};
+ 
+
+window.example = {
+  example,
+  filtrado,
+  sortData,
+  computeStats
+};
