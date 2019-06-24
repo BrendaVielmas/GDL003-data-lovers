@@ -2,11 +2,13 @@ require('../src/data.js');
 //Pruebas de filterData
 describe ('filterData', () => {
   it('is a filterData', () => {
-    expect (typeof data.filtrado).toEqual('function');
+    expect (typeof data.filterData).toEqual('function');
   });
 
-  it('returns `filterData`', () => {
-    expect(data.filterData()).toEqual('filterData');
+  it('debería retornar [{"name": "Bulbasaur"},{"name": "Ivysaur"},{"name": "Venusaur"}]', () => {
+    let input = [{"name": "Bulbasaur"},{"name": "Charmander"},{"name": "Ivysaur"},{"name": "Venusaur"}];
+    let condition = "Poison";
+    expect(data.filterData(input, condition)).toEqual([{"name": "Bulbasaur"},{"name": "Ivysaur"},{"name": "Venusaur"}]);
   });
 });
 //Pruebas de sortData
