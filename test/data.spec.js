@@ -1,41 +1,40 @@
 require('../src/data.js');
-
-
-/*describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
-
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});*/
-describe('filterData', () => {
-  it('is a function', () => {
-    expect(typeof data.filterData).toBe('function');
+//Pruebas de filterData
+describe ('filterData', () => {
+  it('is a filterData', () => {
+    expect (typeof data.filtrado).toEqual('function');
   });
 
   it('returns `filterData`', () => {
-    expect(data.filterData()).toBe('filterData');
+    expect(data.filterData()).toEqual('filterData');
   });
 });
-
-describe('sortData', () => {
-  it('is a function', () => {
-    expect(typeof data.sortData).toBe('function');
+//Pruebas de sortData
+describe ('sortData', () => {
+  it ('is a function', () => {
+    expect (typeof data.sortData).toEqual('function');
   });
-
-  it('returns `sortData`', () => {
-    expect(data.sortData()).toBe('sortData');
+  it('debería retornar [{"name": "Bulbasaur"},{"name": "Charmander"},{"name": "Squirtle"}]', () => {
+    let input = [{"name": "Squirtle"},{"name": "Charmander"},{"name": "Bulbasaur"}];
+    let sortBy = "name";
+    let sortOrder = "asc"; //asc=ascendente
+    expect(data.sortData(input, sortBy, sortOrder)).toEqual([{"name": "Bulbasaur"},{"name": "Charmander"},{"name": "Squirtle"}]);
+  });
+  it('debería retornar [{"name": "Squirtle"},{"name": "Charmander"},{"name": "Bulbasaur"}]', () => {
+    let input = [{"name": "Charmander"},{"name": "Squirtle"},{"name": "Bulbasaur"}];
+    let sortBy = "name";
+    let sortOrder = "desc"; //desc=descendente
+    expect(data.sortData(input, sortBy, sortOrder)).toEqual([{"name": "Squirtle"},{"name": "Charmander"},{"name": "Bulbasaur"}]);
   });
 });
-
-describe('computeStats', () => {
-  it('is a function', () => {
-    expect(typeof data.computeStats).toBe('function');
+//Pruebas de computeStats
+describe ('computeStats', () => {
+  it ('is a function', () => {
+    expect (typeof data.computeStats).toEqual('function');
   });
 
   it('returns `computeStats`', () => {
-    expect(data.computeStats()).toBe('computeStats');
+    expect(data.computeStats()).toEqual('computeStats');
   });
 });
+
