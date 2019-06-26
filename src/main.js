@@ -1,19 +1,22 @@
 
 //Esta función es para filtrar los Pokemon
-let condition () => {
+let condition = () => {
 	/*let input () => {
 		let checkInput = document.querySelector('input[name="cbox"]:checked');
 	  let input = checkInput.value;
 	};
 	let condition () => {
 	};*/
-	let filteredPokemon = window.data.filterData(POKEMON.pokemon, "type");
-	root.innerHTML = "";
-	filteredPokemon.forEach(function(pokemon) {
-  		root.innerHTML += `<p><img src="${pokemon.img}"> <br>${pokemon.name} <br>${pokemon.id} <br>${pokemon.type} <br>${pokemon.weaknesses}</p>`;
-	});
-};
-document.getElementById("pokeBall2").addEventListener("click",condition);
+	const optionFilter = document.getElementById("cbox").checked;
+	const optionFilterInText = optionFilter.value;
+	let filteredPokemon = window.data.filterData(POKEMON.pokemon, optionFilterInText);
+	pokemonListFiltered.innerHTML += "";
+	filteredPokemon.forEach(function (pokemon) {
+		pokemonListFiltered.innerHTML += `<img src="${pokemon.img}">`;
+
+});
+}
+
 
 
 /*let input = () => {
@@ -51,6 +54,5 @@ let computeStats =() => {
 	});
 };
 document.getElementById("sortButton").addEventListener("click", sortBy);
-
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
-
+document.getElementById("pokeBall2").addEventListener("click", condition);
