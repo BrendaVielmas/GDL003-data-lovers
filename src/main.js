@@ -1,5 +1,5 @@
-let input = () => {
-};
+/*let input = () => {
+};*/
 let sortBy = () => {
 	const optionSelect = document.getElementById("orderOptions");
 	const formSelect = document.getElementById("orderForms");
@@ -7,15 +7,16 @@ let sortBy = () => {
 	const formSelectInText = formSelect.options[formSelect.selectedIndex].text;
 	//console.log(optionSelectInText, formSelectInText);
 	let orderedPokemon = window.data.sortData(POKEMON.pokemon, optionSelectInText, formSelectInText);
+	let pokemonList ;
 	pokemonList.innerHTML = "";
 	orderedPokemon.forEach(function (pokemon) {
 		pokemonList.innerHTML += `<img src="${pokemon.img}">`;
 	});
 };
-let sortOrder = () => {
-}
+/*let sortOrder = () => {
+};*/
 let computeStats =() => {
-	let countOfTypeOfPokemon = window.data.computeStats();
+	let countOfTypeOfPokemon = window.data.computeStats(POKEMON.pokemon);
 	/*
 	let o = {
 		"fire": 7,
@@ -24,10 +25,11 @@ let computeStats =() => {
 	Object.keys(o)
 	["fire", "water"]
 	*/
+	let pokemonStatistics ;
 	pokemonStatistics.innerHTML = "";
 	Object.keys(countOfTypeOfPokemon).forEach(function (type) {
 		pokemonStatistics.innerHTML += `<p>${type}: ${countOfTypeOfPokemon[type]} / 151</p>`;
-	});;
-}
+	});
+};
 document.getElementById("sortButton").addEventListener("click", sortBy);
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);

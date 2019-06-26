@@ -1,6 +1,7 @@
 
 window.data = {
-	filterData : (input, condition) => {
+	filterData : () => {
+		//(input, condition)
 		return 'filterData';
 	},
 
@@ -21,7 +22,7 @@ window.data = {
 				}
 				return 0;
 			});
-		};
+		}
 		if (sortOrder == "Descendente") {
 			output = input.sort((b, a) => {
 				if (a[sortBy] < b[sortBy]) {
@@ -31,8 +32,8 @@ window.data = {
 				}
 				return 0;
 			});
-		};
-    	return output;
+		}
+		return output;
 	},
 
 	/*Se hace una variable donde se guarda un objeto con las cantidades de tipos 
@@ -40,10 +41,10 @@ window.data = {
 	argumento es el valor de la iteración anterior (counterType) y el segundo es 
 	el elemento actual del arreglo (actualPokemon)*/
 	computeStats : (input) => {
-		let countOfTypeOfPokemon = POKEMON.pokemon.reduce((counterType, actualPokemon) => {
+		let countOfTypeOfPokemon = input.reduce((counterType, actualPokemon) => {
 			//si tiene dos tipos de pokemon se hace esto	
 			if (actualPokemon.type.length == 2) {
-				let type1 = actualPokemon.type[0] // 0 = 1er indice(1er tipo)
+				let type1 = actualPokemon.type[0]; // 0 = 1er indice(1er tipo)
 				//esto se realiza si sale por primera vez el tipo de pokemon
 				if (!counterType[type1]) {
 					counterType[type1] = 1;
@@ -52,7 +53,7 @@ window.data = {
 					counterType[type1] += 1;
 				}
 				//para el segundo tipo se hace lo mismo:
-				let type2 = actualPokemon.type[1] // 1 = 2do indice(2do tipo)
+				let type2 = actualPokemon.type[1]; // 1 = 2do indice(2do tipo)
 				//esto se realiza si sale por primera vez el tipo de pokemon
 				if (!counterType[type2]) {
 					counterType[type2] = 1;
@@ -78,4 +79,4 @@ window.data = {
 			
 	}
 
-}
+};
