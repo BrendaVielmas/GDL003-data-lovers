@@ -16,16 +16,17 @@ describe ('sortData', () => {
   it ('is a function', () => {
     expect (typeof data.sortData).toEqual('function');
   });
-  it('debería retornar [{"name": "Bulbasaur"},{"name": "Charmander"},{"name": "Squirtle"}]', () => {
+  it('debería retornar el listado de Pokemon ordenando alfabeticamente de manera ascendente', () => {
     let input = [{"name": "Squirtle"},{"name": "Charmander"},{"name": "Bulbasaur"}];
     let sortBy = "name";
-    let sortOrder = "asc"; //asc=ascendente
+    let sortOrder = "Ascendente";
     expect(data.sortData(input, sortBy, sortOrder)).toEqual([{"name": "Bulbasaur"},{"name": "Charmander"},{"name": "Squirtle"}]);
   });
-  it('debería retornar [{"name": "Squirtle"},{"name": "Charmander"},{"name": "Bulbasaur"}]', () => {
+  
+  it('debería retornar retornar el listado de Pokemon ordenando alfabeticamente de manera descendente', () => {
     let input = [{"name": "Charmander"},{"name": "Squirtle"},{"name": "Bulbasaur"}];
     let sortBy = "name";
-    let sortOrder = "desc"; //desc=descendente
+    let sortOrder = "Descendente"; 
     expect(data.sortData(input, sortBy, sortOrder)).toEqual([{"name": "Squirtle"},{"name": "Charmander"},{"name": "Bulbasaur"}]);
   });
 });
@@ -37,6 +38,8 @@ describe ('computeStats', () => {
 
   it('debería retornar [{"Poison": "2"},{"Fighting": "1"},{"Ghost": "2"}]', () => {
     let input = [{"type": ["Ghost", "Poison"]},{"type": ["Ghost", "Poison"]},{"type": ["Fighting"]}];
-    expect(data.computeStats(input)).toEqual([{"Poison": " 2 / 151"},{"Fighting": " 1 / 151"},{"Ghost": " 2 / 151"}]);
+
+    expect(data.computeStats(input)).toEqual([{"Poison": "2"},{"Fighting": "1"},{"Ghost": "2"}]);
+
   });
 });

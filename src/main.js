@@ -1,3 +1,4 @@
+
 //Esta función es para filtrar los Pokemon
 let condition () => {
 	/*let input () => {
@@ -30,6 +31,7 @@ let sortBy = () => {
 		pokemonList.innerHTML += `<img src="${pokemon.img}">`;
 	});
 };
+
 /*let sortOrder = () => {
 };*/
 let computeStats =() => {
@@ -49,4 +51,6 @@ let computeStats =() => {
 	});
 };
 document.getElementById("sortButton").addEventListener("click", sortBy);
+
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
+

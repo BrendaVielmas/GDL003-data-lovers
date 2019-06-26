@@ -1,5 +1,6 @@
 
 window.data = {
+
 	filterData : (input, condition) => {
 		const filterItems = filteredPokemon.filter(el => (el.type === "Fire"));
 		return filterItems;
@@ -36,13 +37,14 @@ window.data = {
 		return output;
 	},
 
-	/*Se hace una variable donde se guarda un objeto con las cantidades de tipos
+	/*Se hace una variable donde se guarda un objeto con las cantidades de tipos 
 	de pokemon, usando la función reduce en el arreglo de pokemon, donde el primer
-	argumento es el valor de la iteración anterior (counterType) y el segundo es
+	argumento es el valor de la iteración anterior (counterType) y el segundo es 
 	el elemento actual del arreglo (actualPokemon)*/
 	computeStats : (input) => {
 		let countOfTypeOfPokemon = input.reduce((counterType, actualPokemon) => {
-			//si tiene dos tipos de pokemon se hace esto
+			//si tiene dos tipos de pokemon se hace esto	
+
 			if (actualPokemon.type.length == 2) {
 				let type1 = actualPokemon.type[0]; // 0 = 1er indice(1er tipo)
 				//esto se realiza si sale por primera vez el tipo de pokemon
@@ -61,7 +63,9 @@ window.data = {
 				}else {
 					counterType[type2] += 1;
 				}
-			//si solo tiene un tipo de pokemon se hace esto
+
+			//si solo tiene un tipo de pokemon se hace esto	
+
 			} else {
 				//esto se realiza si sale por primera vez el tipo de pokemon
 				if (!counterType[actualPokemon.type]) {
@@ -70,13 +74,17 @@ window.data = {
 				}else {
 					counterType[actualPokemon.type] += 1;
 				}
+
 			}
+
 
 			return counterType;
 		}, {});
 		console.log(countOfTypeOfPokemon);
 		return countOfTypeOfPokemon;
 
+
 	}
 
 };
+
