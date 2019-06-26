@@ -2,8 +2,10 @@
 window.data = {
 
 	filterData : (input, condition) => {
-		const filterItems = filteredPokemon.filter(el => (el.type === "Fire"));
-		return filterItems;
+		let filterItems = input.filter(filterItem => {return filterItem.type.includes("Poison")});
+		console.log (filterItems);
+	
+		return filterItems;	
 	},
 
 	/*sortData(input, sortBy, sortOrder): esta función sort u ordenar
@@ -82,8 +84,6 @@ window.data = {
 		}, {});
 		console.log(countOfTypeOfPokemon);
 		return countOfTypeOfPokemon;
-
-
 	}
 
 };
