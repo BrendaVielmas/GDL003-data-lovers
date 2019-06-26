@@ -6,19 +6,44 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-<select name="orderOptions" id="orderOptions">
-   <option value="1">Organizar por:</option> 
-   <option value="2">Id</option> 
-   <option value="3">Nombre</option>  
-</select>
-<select name="orderForm" id="orderForm">
-    <option value="1">Orden:</option> 
-    <option value="2">Ascendente</option> 
-    <option value="3">Descendente</option>  
- </select>
-    <button name="button" id="sortButton">Click me</button>
-    <div id="root"></div>
-    <script src="./data/pokemon/pokemon.js"></script> 
+    <img class="principalLogo" src="imagenes/Pokemonlogo.png" alt="logo">
+    <div class="sorted" id="sorted">
+      <select name="orderOptions" id="orderOptions">
+      <option value="1">Organizar por:</option>
+      <option value="id">Id</option>
+      <option value="name">Nombre</option>
+    </select>
+    <select name="orderForms" id="orderForms">
+      <option value="1">Orden:</option>
+      <option value="2">Ascendente</option>
+      <option value="3">Descendente</option>
+    </select>
+    <button id="sortButton">Mostrar Pokemons</button>
+    <button id="computeStatsButton">Mostrar estadísticas</button>
+    </div>
+    <div id="pokemonList"></div>
+    <div id="pokemonStatistics"></div>
+    <img class="pokeBall" id="pokeBall" src="imagenes/pakeball3.gif" alt="Pokeball Button">
+
+
+
+    <!-- Se agrega seccion de filtrado-->
+    <div class="filtered" id="filtered">
+      <div class="filterOptions" id="filterOptions">
+        <ul>
+          <li>TYPE</li>
+          <li><input type="checkbox" name="cbox" value="Fire"> <label for="cbox1">Fire</label></li>
+          <li><input type="checkbox" name="cbox" value="Poison"> <label for="cbox2">Poison</label></li>
+          <li><input type="checkbox" name="cbox" value="Water"> <label for="cbox3">Water</label></li>
+          <li><img class="pokeBall2" name="pokeBall2" src="imagenes/Pokeball.png" alt="Pokeball Button2"></li>
+        </ul>
+      </div>
+      <div class="root" id="root">
+        <table class="filteredPokemon" id="filteredPokemon">
+        </table>
+      </div>
+    </div>
+    <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
