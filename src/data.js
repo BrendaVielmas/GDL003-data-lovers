@@ -3,44 +3,21 @@ window.data = {
 	filterData : (input, condition) => {
 		return 'filterData';
 	},
+
 	/*sortData(input, sortBy, sortOrder): esta función sort u ordenar
-	  recibe tres parámetros. El primer parámetro, input, nos entrega los datos.
-	   El segundo parámetro, sortBy, nos dice con respecto a cuál de los campos de
-	   la data se quiere ordenar. El tercer parámetro, sortOrder, indica si se quiere
-			ordenar de manera ascendente o descendente.*/
-			
+		recibe tres parámetros. El primer parámetro, input, nos entrega los datos.
+		El segundo parámetro, sortBy, nos dice con respecto a cuál de los campos de
+		la data se quiere ordenar. El tercer parámetro, sortOrder, indica si se quiere
+		ordenar de manera ascendente o descendente.
+		sort = ordenar.*/
 	sortData : (input, sortBy, sortOrder) => {
-		/*let ascOrder = (a, b)=>{
-			if (a[sortBy] < b[sortBy]) {
-				return -1;
-			}
-			else if (a[sortBy] > b[sortBy]) {
-				return 1;
-			}
-			return 0;
-		};
-		let descOrder = (b, a)=>{
-			if (a[sortBy] < b[sortBy]) {
-				return -1;
-			}
-			else if (a[sortBy] > b[sortBy]) {
-				return 1;
-			}
-			return 0;
-		};*/
-		/*sort = ordenar.
-		Si no se provee compareFunction, los elementos son ordenados convirtiéndolos
-		a strings y comparando la posición del valor Unicode de dichos strings.
-		Cuando se necesita acomodar con base a los atributos de un objeto se necesita
-		proveer compareFunction*/
 		let output;
 		if (sortOrder == "Ascendente") {
 			output = input.sort((a, b) => {
 				if (a[sortBy] < b[sortBy]) {
-				return -1;
-				}
-				else if (a[sortBy] > b[sortBy]) {
-				return 1;
+					return -1;
+				} else if (a[sortBy] > b[sortBy]) {
+					return 1;
 				}
 				return 0;
 			});
@@ -49,25 +26,56 @@ window.data = {
 			output = input.sort((b, a) => {
 				if (a[sortBy] < b[sortBy]) {
 					return -1;
-				}
-				else if (a[sortBy] > b[sortBy]) {
-				return 1;
+				} else if (a[sortBy] > b[sortBy]) {
+					return 1;
 				}
 				return 0;
 			});
 		};
-    return output;
-		
-},
+    	return output;
+	},
+
+	/*Se hace una variable donde se guarda un objeto con las cantidades de tipos 
+	de pokemon, usando la función reduce en el arreglo de pokemon, donde el primer
+	argumento es el valor de la iteración anterior (counterType) y el segundo es 
+	el elemento actual del arreglo (actualPokemon)*/
 	computeStats : (input) => {
-		const typeOfPokemons = [POKEMON.pokemon[O], "type"];
-		const timesOfTypeOfPokemon = typeOfPokemons.reduce((counterType, typeOfPokemon) => {
-			counterType[typeOfPokemon] = (counterType[typeOfPokemon] || 0) + 1;
-		})
-		console.log(counterType);
-		return 'computeStats';
-		
-}
+		let countOfTypeOfPokemon = POKEMON.pokemon.reduce((counterType, actualPokemon) => {
+			//si tiene dos tipos de pokemon se hace esto	
+			if (actualPokemon.type.length == 2) {
+				let type1 = actualPokemon.type[0] // 0 = 1er indice(1er tipo)
+				//esto se realiza si sale por primera vez el tipo de pokemon
+				if (!counterType[type1]) {
+					counterType[type1] = 1;
+				//esto se realiza si ya salió anteriormente el tipo de pokemon
+				}else {
+					counterType[type1] += 1;
+				}
+				//para el segundo tipo se hace lo mismo:
+				let type2 = actualPokemon.type[1] // 1 = 2do indice(2do tipo)
+				//esto se realiza si sale por primera vez el tipo de pokemon
+				if (!counterType[type2]) {
+					counterType[type2] = 1;
+				//esto se realiza si ya salió anteriormente el tipo de pokemon
+				}else {
+					counterType[type2] += 1;
+				}
+			//si solo tiene un tipo de pokemon se hace esto	
+			} else {
+				//esto se realiza si sale por primera vez el tipo de pokemon
+				if (!counterType[actualPokemon.type]) {
+					counterType[actualPokemon.type] = 1;
+				//esto se realiza si ya salió anteriormente el tipo de pokemon
+				}else {
+					counterType[actualPokemon.type] += 1;
+				}
+			}	
+
+			return counterType;
+		}, {});
+		console.log(countOfTypeOfPokemon);
+		return countOfTypeOfPokemon;
+			
+	}
 
 }
-		
