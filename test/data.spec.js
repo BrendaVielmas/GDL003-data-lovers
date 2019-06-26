@@ -38,7 +38,8 @@ describe ('computeStats', () => {
 
   it('debería retornar [{"Poison": "2"},{"Fighting": "1"},{"Ghost": "2"}]', () => {
     let input = [{"type": ["Ghost", "Poison"]},{"type": ["Ghost", "Poison"]},{"type": ["Fighting"]}];
+
     expect(data.computeStats(input)).toEqual([{"Poison": "2"},{"Fighting": "1"},{"Ghost": "2"}]);
+
   });
 });
-

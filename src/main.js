@@ -1,3 +1,21 @@
+
+//Esta función es para filtrar los Pokemon
+let condition () => {
+	/*let input () => {
+		let checkInput = document.querySelector('input[name="cbox"]:checked');
+	  let input = checkInput.value;
+	};
+	let condition () => {
+	};*/
+	let filteredPokemon = window.data.filterData(POKEMON.pokemon, "type");
+	root.innerHTML = "";
+	filteredPokemon.forEach(function(pokemon) {
+  		root.innerHTML += `<p><img src="${pokemon.img}"> <br>${pokemon.name} <br>${pokemon.id} <br>${pokemon.type} <br>${pokemon.weaknesses}</p>`;
+	});
+};
+document.getElementById("pokeBall2").addEventListener("click",condition);
+
+
 /*let input = () => {
 };*/
 let sortBy = () => {
@@ -13,6 +31,7 @@ let sortBy = () => {
 		pokemonList.innerHTML += `<img src="${pokemon.img}">`;
 	});
 };
+
 /*let sortOrder = () => {
 };*/
 let computeStats =() => {
@@ -32,4 +51,6 @@ let computeStats =() => {
 	});
 };
 document.getElementById("sortButton").addEventListener("click", sortBy);
+
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
+

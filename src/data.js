@@ -1,8 +1,9 @@
 
 window.data = {
-	filterData : () => {
-		//(input, condition)
-		return 'filterData';
+
+	filterData : (input, condition) => {
+		const filterItems = filteredPokemon.filter(el => (el.type === "Fire"));
+		return filterItems;
 	},
 
 	/*sortData(input, sortBy, sortOrder): esta función sort u ordenar
@@ -43,6 +44,7 @@ window.data = {
 	computeStats : (input) => {
 		let countOfTypeOfPokemon = input.reduce((counterType, actualPokemon) => {
 			//si tiene dos tipos de pokemon se hace esto	
+
 			if (actualPokemon.type.length == 2) {
 				let type1 = actualPokemon.type[0]; // 0 = 1er indice(1er tipo)
 				//esto se realiza si sale por primera vez el tipo de pokemon
@@ -61,7 +63,9 @@ window.data = {
 				}else {
 					counterType[type2] += 1;
 				}
+
 			//si solo tiene un tipo de pokemon se hace esto	
+
 			} else {
 				//esto se realiza si sale por primera vez el tipo de pokemon
 				if (!counterType[actualPokemon.type]) {
@@ -70,13 +74,17 @@ window.data = {
 				}else {
 					counterType[actualPokemon.type] += 1;
 				}
-			}	
+
+			}
+
 
 			return counterType;
 		}, {});
 		console.log(countOfTypeOfPokemon);
 		return countOfTypeOfPokemon;
-			
+
+
 	}
 
 };
+
