@@ -37,11 +37,10 @@ describe ('sortData', () => {
     let sortOrder = "Ascendente";
     expect(data.sortData(input, sortBy, sortOrder)).toEqual([{"name": "Bulbasaur"},{"name": "Charmander"},{"name": "Squirtle"}]);
   });
-    
   it('debería retornar retornar el listado de Pokemon ordenando alfabeticamente de manera descendente', () => {
     let input = [{"name": "Charmander"},{"name": "Squirtle"},{"name": "Bulbasaur"}];
     let sortBy = "name";
-    let sortOrder = "Descendente"; 
+    let sortOrder = "Descendente";
     expect(data.sortData(input, sortBy, sortOrder)).toEqual([{"name": "Squirtle"},{"name": "Charmander"},{"name": "Bulbasaur"}]);
   });
 });

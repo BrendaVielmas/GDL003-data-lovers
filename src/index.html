@@ -2,51 +2,51 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="imagenes/pokeballicon.ico">
   </head>
   <body>
-
     <img class="principalLogo" src="imagenes/Pokemonlogo.png" alt="logo">
+    <iframe class="pokemonVideo" src="https://www.youtube.com/embed/MenVQRgGraE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <img class="pokeBallGif" id="pokeBallGif" src="imagenes/pakeball3.gif" alt="Pokeball Button">
     <div class="sorted" id="sorted">
       <select name="orderOptions" id="orderOptions">
-      <option value="1">Organizar por:</option>
-      <option value="id">Id</option>
-      <option value="name">Nombre</option>
-    </select>
-    <select name="orderForms" id="orderForms">
-      <option value="1">Orden:</option>
-      <option value="2">Ascendente</option>
-      <option value="3">Descendente</option>
-    </select>
-    <button id="sortButton">Mostrar Pokemons</button>
-    <button id="computeStatsButton">Mostrar estadísticas</button>
+        <option value="1">Organizar por:</option>
+        <option value="id">Id</option>
+        <option value="name">Nombre</option>
+      </select>
+      <select name="orderForms" id="orderForms">
+        <option value="1">Orden:</option>
+        <option value="2">Ascendente</option>
+        <option value="3">Descendente</option>
+      </select>
+      <button id="sortButton">Mostrar Pokemons</button>
+      <button id="computeStatsButton">Mostrar estadísticas</button>
+      <div id="pokemonList"></div>
+      <div id="pokemonStatistics"></div>
     </div>
-    <div id="pokemonList"></div>
-    <div id="pokemonStatistics"></div>
-
-    <img class="pokeBall" id="pokeBall" src="imagenes/pakeball3.gif" alt="Pokeball Button">
-
 
 
     <!-- Se agrega seccion de filtrado-->
     <div class="filtered" id="filtered">
       <div class="filterOptions" id="filterOptions">
         <ul>
-          <li>TYPE</li>
-          <li><input type="checkbox" name="cbox" value="Fire"> <label for="cbox1">Fire</label></li>
-          <li><input type="checkbox" name="cbox" value="Poison"> <label for="cbox2">Poison</label></li>
-          <li><input type="checkbox" name="cbox" value="Water"> <label for="cbox3">Water</label></li>
-          <li><img class="pokeBall2" id="pokeBall2" src="imagenes/Pokeball.png" alt="Pokeball Button2"></li>
+
+          <li><h3>TYPE</h3></li>
+          <li><input type="checkbox" name="cbox" value="Fire"> <label for="cbox">Fire</label></li>
+          <li><input type="checkbox" name="cbox" value="Poison"> <label for="cbox">Poison</label></li>
+          <li><input type="checkbox" name="cbox" value="Water"> <label for="cbox">Water</label></li>
+          <li><img class="pokeBallBtn" id="pokeBallBtn" src="imagenes/Pokeball.png" alt="Pokeball Button"></li>
+
         </ul>
       </div>
       <div class="pokemonListFiltered" id="pokemonListFiltered">
-        <!--<table class="filteredPokemon" id="filteredPokemon">
-        </table>-->
       </div>
     </div>
     <script src="./data/pokemon/pokemon.js"></script>
-
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>

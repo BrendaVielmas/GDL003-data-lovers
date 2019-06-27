@@ -1,11 +1,12 @@
-
 //Esta función es para filtrar los Pokemon
 let condition = () => {
 	const pokemonListFiltered = document.getElementById ("pokemonListFiltered");
+
 	
 	let firstListOfTypeOfPokemon = [];
 	
 	document.querySelectorAll('input[name="cbox"]:checked').forEach((checkbox) => { 
+
 		firstListOfTypeOfPokemon = firstListOfTypeOfPokemon.concat([checkbox.value]);
  	})
 	let filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
@@ -13,13 +14,14 @@ let condition = () => {
 	filteredPokemon.forEach(function (pokemon) {
 		pokemonListFiltered.innerHTML += `
 		<ul>
-		<li><img src="${pokemon.img}"</li>
-		<li>name: ${pokemon.name}</li>
-		<li>id: ${pokemon.id}</li>
-		<li>type: ${pokemon.type}</li>
-		<li>weaknesses: ${pokemon.weaknesses}</li>
-		</ul>`; 
-		//pokemonListFiltered.innerHTML += `<name src="${pokemon.name}">`;
+
+		<li><img src="${pokemon.img}"></li>
+		<li>Name: ${pokemon.name}</li>
+		<li>Id: ${pokemon.id}</li>
+		<li>Type: ${pokemon.type}</li>
+		<li>Weaknesses: ${pokemon.weaknesses}</li>
+		</ul>`;
+
 	});
 };
 
@@ -33,7 +35,14 @@ let sortBy = () => {
 	let orderedPokemon = window.data.sortData(POKEMON.pokemon, optionSelectInText, formSelectInText);
 	pokemonList.innerHTML = "";
 	orderedPokemon.forEach(function (pokemon) {
-		pokemonList.innerHTML += `<img src="${pokemon.img}">`;
+		pokemonList.innerHTML += `
+		<ul>
+		<li><img src="${pokemon.img}"></li>
+		<li>Name: ${pokemon.name}</li>
+		<li>Id: ${pokemon.id}</li>
+		<li>Type: ${pokemon.type}</li>
+		<li>Weaknesses: ${pokemon.weaknesses}</li>
+		</ul>`;
 	});
 };
 
@@ -49,4 +58,4 @@ let computeStats =() => {
 };
 document.getElementById("sortButton").addEventListener("click", sortBy);
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
-document.getElementById("pokeBall2").addEventListener("click", condition);
+document.getElementById("pokeBallBtn").addEventListener("click", condition);
