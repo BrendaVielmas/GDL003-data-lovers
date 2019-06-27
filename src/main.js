@@ -11,7 +11,15 @@ let condition = () => {
 	let filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
 	pokemonListFiltered.innerHTML += "";
 	filteredPokemon.forEach(function (pokemon) {
-		pokemonListFiltered.innerHTML += `<img src="${pokemon.img}">`;
+		pokemonListFiltered.innerHTML += `
+		<ul>
+		<li><img src="${pokemon.img}"</li>
+		<li>name: ${pokemon.name}</li>
+		<li>id: ${pokemon.id}</li>
+		<li>type: ${pokemon.type}</li>
+		<li>weaknesses: ${pokemon.weaknesses}</li>
+		</ul>`; 
+		//pokemonListFiltered.innerHTML += `<name src="${pokemon.name}">`;
 	});
 };
 
