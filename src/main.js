@@ -2,9 +2,11 @@
 let condition = () => {
 	const pokemonListFiltered = document.getElementById ("pokemonListFiltered");
 
+	
 	let firstListOfTypeOfPokemon = [];
+	
+	document.querySelectorAll('input[name="cbox"]:checked').forEach((checkbox) => { 
 
-	document.querySelectorAll('input[name="cbox"]:checked').forEach((checkbox) => {
 		firstListOfTypeOfPokemon = firstListOfTypeOfPokemon.concat([checkbox.value]);
  	})
 	let filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
@@ -12,12 +14,14 @@ let condition = () => {
 	filteredPokemon.forEach(function (pokemon) {
 		pokemonListFiltered.innerHTML += `
 		<ul>
+
 		<li><img src="${pokemon.img}"></li>
 		<li>Name: ${pokemon.name}</li>
 		<li>Id: ${pokemon.id}</li>
 		<li>Type: ${pokemon.type}</li>
 		<li>Weaknesses: ${pokemon.weaknesses}</li>
 		</ul>`;
+
 	});
 };
 

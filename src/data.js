@@ -1,5 +1,6 @@
 
 window.data = {
+
 	/*filterData : (input, pokemonTypes): esta función recibe dos parámetros.
 	El parámetro input nos entrega los datos y el parámetro pokemonTypes nos indica
 	el valor por el cual se va a filtrar el objeto*/
