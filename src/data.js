@@ -1,11 +1,20 @@
 
 window.data = {
 
-	filterData : (input, condition) => {
-		let filterItems = input.filter(filterItem => {return filterItem.type.includes("Poison")});
-		console.log (filterItems);
-	
-		return filterItems;	
+	filterData : (input, pokemonTypes) => {
+		let filteredPokemons = input.filter((pokemon) => {
+			let hasAnyType = false; 
+			console.log(pokemonTypes + " " + pokemon.type);
+			pokemonTypes.forEach(function (type) {
+
+				if (pokemon.type.includes(type) == true) {
+					hasAnyType = true;
+				}
+			});
+			return hasAnyType;
+		});
+		console.log (filteredPokemons);
+		return filteredPokemons;	
 	},
 
 	/*sortData(input, sortBy, sortOrder): esta función sort u ordenar
