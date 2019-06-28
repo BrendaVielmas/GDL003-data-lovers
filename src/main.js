@@ -1,5 +1,6 @@
 
 document.getElementById("filterOptions").style.display = "none";
+let filteredPokemon;
 //Esta función es para filtrar los Pokemon
 let condition = () => {
 	const pokemonList = document.getElementById("pokemonList");
@@ -10,10 +11,9 @@ let condition = () => {
 	const pokemonListFiltered = document.getElementById ("pokemonListFiltered");
 	let firstListOfTypeOfPokemon = [];
 	document.querySelectorAll('input[name="cbox"]:checked').forEach((checkbox) => { 
-
 		firstListOfTypeOfPokemon = firstListOfTypeOfPokemon.concat([checkbox.value]);
  	})
- 	let filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
+ 	filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
  	let orderedPokemon = window.data.sortData(filteredPokemon, optionSelectInText, formSelectInText);
 	pokemonListFiltered.innerHTML = "";
 	filteredPokemon.forEach(function (pokemon) {
@@ -32,7 +32,7 @@ let condition = () => {
 
 let computeStats =() => {
 	const pokemonStatistics = document.getElementById("pokemonStatistics");
-	let countOfTypeOfPokemon = window.data.computeStats(POKEMON.pokemon);
+	let countOfTypeOfPokemon = window.data.computeStats(filteredPokemon);
 	pokemonStatistics.innerHTML = "";
 	Object.keys(countOfTypeOfPokemon).forEach(function (type) {
 		pokemonStatistics.innerHTML += `<p class="statisticsResult">${type}: ${countOfTypeOfPokemon[type]} / 151</p>`;
@@ -41,10 +41,10 @@ let computeStats =() => {
 
 let showAllPokemons = () => {
 	document.getElementById("filterOptions").style.display = "block";
-	let orderedPokemon = window.data.sortData(POKEMON.pokemon, "id", "Ascendente");
-	pokemonList.innerHTML = "";
-	orderedPokemon.forEach(function (pokemon) {
-		pokemonList.innerHTML += `
+	filteredPokemon = window.data.sortData(POKEMON.pokemon, "id", "Ascendente");
+	pokemonListFiltered.innerHTML = "";
+	filteredPokemon.forEach(function (pokemon) {
+		pokemonListFiltered.innerHTML += `
 		<div class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
 		<p>Name: ${pokemon.name}</p>
@@ -53,7 +53,7 @@ let showAllPokemons = () => {
 		<p>Weaknesses: ${pokemon.weaknesses}</p>
 		</div>`;
 
-});
+	});
 }
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
 document.getElementById("pokeBallBtn").addEventListener("click", condition);
