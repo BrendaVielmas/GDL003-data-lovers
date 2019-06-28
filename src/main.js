@@ -1,3 +1,4 @@
+
 //Esta función es para filtrar los Pokemon
 let condition = () => {
 	const pokemonListFiltered = document.getElementById ("pokemonListFiltered");
@@ -13,14 +14,13 @@ let condition = () => {
 	pokemonListFiltered.innerHTML += "";
 	filteredPokemon.forEach(function (pokemon) {
 		pokemonListFiltered.innerHTML += `
-		<ul>
-
-		<li><img src="${pokemon.img}"></li>
-		<li>Name: ${pokemon.name}</li>
-		<li>Id: ${pokemon.id}</li>
-		<li>Type: ${pokemon.type}</li>
-		<li>Weaknesses: ${pokemon.weaknesses}</li>
-		</ul>`;
+		<div class = "cardOfPokemon" >
+		<img src="${pokemon.img}">
+		<p>Name: ${pokemon.name}</p>
+		<p>Id: ${pokemon.id}</p>
+		<p>Type: ${pokemon.type}</p>
+		<p>Weaknesses: ${pokemon.weaknesses}</p>
+		</div>`;
 
 	});
 };
@@ -32,30 +32,44 @@ let sortBy = () => {
 	const optionSelectInText = optionSelect.options[optionSelect.selectedIndex].value;
 	const formSelectInText = formSelect.options[formSelect.selectedIndex].text;
 	//console.log(optionSelectInText, formSelectInText);
-	let orderedPokemon = window.data.sortData(POKEMON.pokemon, optionSelectInText, formSelectInText);
+	let orderedPokemon = window.data.sortData(POKEMON.pokemon, optionSelectInText, formSelectInText, firstListOfTypeOfPokemon);
 	pokemonList.innerHTML = "";
 	orderedPokemon.forEach(function (pokemon) {
 		pokemonList.innerHTML += `
-		<ul>
-		<li><img src="${pokemon.img}"></li>
-		<li>Name: ${pokemon.name}</li>
-		<li>Id: ${pokemon.id}</li>
-		<li>Type: ${pokemon.type}</li>
-		<li>Weaknesses: ${pokemon.weaknesses}</li>
-		</ul>`;
+		<div class = "cardOfPokemon" >
+		<img src="${pokemon.img}">
+		<p>Name: ${pokemon.name}</p>
+		<p>Id: ${pokemon.id}</p>
+		<p>Type: ${pokemon.type}</p>
+		<p>Weaknesses: ${pokemon.weaknesses}</p>
+		</div>`;
 	});
 };
 
-/*let sortOrder = () => {
-};*/
 let computeStats =() => {
 	const pokemonStatistics = document.getElementById("pokemonStatistics");
 	let countOfTypeOfPokemon = window.data.computeStats(POKEMON.pokemon);
 	pokemonStatistics.innerHTML = "";
 	Object.keys(countOfTypeOfPokemon).forEach(function (type) {
-		pokemonStatistics.innerHTML += `<p>${type}: ${countOfTypeOfPokemon[type]} / 151</p>`;
+		pokemonStatistics.innerHTML += `<p class="statisticsResult">${type}: ${countOfTypeOfPokemon[type]} / 151</p>`;
 	});
 };
+
+let showAllPokemons = () => {
+	let orderedPokemon = window.data.sortData(POKEMON.pokemon, "id", "Ascendente");
+	orderedPokemon.forEach(function (pokemon) {
+		pokemonList.innerHTML += `
+		<div class = "cardOfPokemon" >
+		<img src="${pokemon.img}">
+		<p>Name: ${pokemon.name}</p>
+		<p>Id: ${pokemon.id}</p>
+		<p>Type: ${pokemon.type}</p>
+		<p>Weaknesses: ${pokemon.weaknesses}</p>
+		</div>`;
+
+});
+}
 document.getElementById("sortButton").addEventListener("click", sortBy);
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
 document.getElementById("pokeBallBtn").addEventListener("click", condition);
+document.getElementById("pokeBallGif").addEventListener("click", showAllPokemons);

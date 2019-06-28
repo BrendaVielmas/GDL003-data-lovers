@@ -17,28 +17,23 @@ body,html  {
   margin:auto;
 }
 .pokemonVideo{
-  width: 580px;
-  height: 370px;
+  width: 100%;
+  height: 60%;
   display:block;
-  margin:auto;
   margin-top: 10px;
-  border-radius: 25px;
 }
-.sorted,.pokemonListFiltered{
+.sorted,.pokemonListFiltered,.otherBtn{
   margin:auto;
-  width: 60%;
+  width: 900px;
   margin-top: 20px;
   text-align: center;
-  color: #fff;
+  color: #000;
 }
-.pokemonListFiltered ul{
-  list-style: none;
-}
-.pokeBallGif{
+.pokeBallGif,.computeStatsButton{
   width: 130px;
   height: 130px;
   margin:auto;
-  display:block;
+  display:inline-block;
   cursor:pointer;
 }
 .pokeBallBtn{
@@ -57,7 +52,7 @@ h3{
 .filterOptions{
   position: fixed;
   left: 0;
-  top: 330px;
+  top: 60px;
   z-index: 2000px;
   font-size: 18px;
   color:#FFF;
@@ -66,4 +61,21 @@ h3{
 }
 .filterOptions ul{
   list-style: none;
+}
+
+.cardOfPokemon,.pokemonList{
+  width: 230px;
+  height: 300px;
+  margin: auto;
+  text-align: center;
+  float: left;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+}
+.statisticsResult{
+  background: rgba(255, 255, 255, 0.8);
+  width: 40%;
+  margin: auto;
 }
