@@ -10,77 +10,95 @@ body,html  {
    background-position: center center;
    background-size: cover;
 }
-.principalLogo{
+.principalLogo {
   width: 280px;
   height: 110px;
   display:block;
   margin:auto;
 }
-.pokemonVideo{
-  width: 100%;
-  height: 60%;
+.pokemonVideo {
+  width: 600px;
+  height: 350px;
   display:block;
+  margin: auto;
   margin-top: 10px;
+  border-radius: 10px;
 }
-.sorted,.pokemonListFiltered,.otherBtn{
+.sorted,.pokemonListFiltered,.otherBtn {
   margin:auto;
   width: 900px;
   margin-top: 20px;
   text-align: center;
   color: #000;
 }
-.clickMeImg {
-  width: 50px;
-  height: 50px;
+.clickMeImg{
+  width: 130px;
+  height: 130px;
 }
-.pokeBallGif,.computeStatsButton{
+.pokeBallGif {
   width: 130px;
   height: 130px;
   margin:auto;
   display:inline-block;
   cursor:pointer;
 }
-.pokeBallBtn{
+.computeStatsButton {
+  width: 170px;
+  height: 130px;
+  margin:auto;
+  display:inline-block;
+  cursor:pointer;
+}
+.pokeBallBtn {
   width: 80px;
   height: 80px;
   margin-top: 20px;
   cursor:pointer;
 }
-.pokeBallBtn:hover{
+.pokeBallBtn:hover {
   width: 84px;
   height: 84px;
 }
-h3{
+h3 {
   text-decoration: underline;
 }
-.filterOptions{
-  position: fixed;
+.filterOptions {
+  float: left;
   left: 0;
-  top: 60px;
-  z-index: 2000px;
   font-size: 18px;
   color:#FFF;
   display: inline-block;
   padding: 10px;
 }
-.filterOptions ul{
+.filterOptions ul {
   list-style: none;
 }
 
-.cardOfPokemon,.pokemonList{
+.cardOfPokemon,.pokemonList {
   width: 230px;
   height: 300px;
-  margin: auto;
   text-align: center;
   float: left;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  margin: 10px;
+  background: rgba(195 , 195, 195, 0.7);
+  padding: 5px;
+  margin: 9px;
   border-radius: 15px;
 }
-.statisticsResult{
-  background: rgba(255, 255, 255, 0.8);
-  width: 40%;
-  margin: auto;
-
+.pokemonStatisticsSec {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  float: right;
+  margin-top: 9px;
+  padding: 4px;
+  right: 0;
+  text-align: center;
+  width: 20%;
+}
+select{
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+  background: rgba(255, 255, 255 , 0.8);
 }
