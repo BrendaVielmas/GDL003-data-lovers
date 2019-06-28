@@ -21,7 +21,7 @@ let condition = () => {
 		pokemonListFiltered.innerHTML += `
 		<div class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
-		<p><h2>${pokemon.name}</h2></p>
+		<p><h3>${pokemon.name}</h3></p>
 		<p>Id: ${pokemon.id}</p>
 		<p>Type: ${pokemon.type}</p>
 		<p>Weaknesses: ${pokemon.weaknesses}</p>
@@ -53,7 +53,7 @@ let showAllPokemons = () => {
 		pokemonListFiltered.innerHTML += `
 		<div class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
-		<p><h2>${pokemon.name}</h2></p>
+		<p><h3>${pokemon.name}</h3></p>
 		<p>Id: ${pokemon.id}</p>
 		<p>Type: ${pokemon.type}</p>
 		<p>Weaknesses: ${pokemon.weaknesses}</p>
