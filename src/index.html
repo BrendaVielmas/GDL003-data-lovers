@@ -10,23 +10,36 @@
   <body>
     <!-- Pagina de inicio-->
     <img class="principalLogo" src="imagenes/Pokemonlogo.png" alt="logo">
-    <iframe class="pokemonVideo" src="https://www.youtube.com/embed/MynNG2IRZDI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="pokemonVideo" src="videos/welcomeVideo.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <div class="otherBtn">
       <img class="pokeBallGif" id="pokeBallGif" src="imagenes/pakeball3.gif" alt="Pokeball Button">
-      <img class="clickMeImg" id="clickMe" src="imagenes/click-me.png" alt="Click Me">      
+      <img class="clickMeImg" id="clickMe" src="imagenes/clickme.png" alt="Click Me">
       <img class="computeStatsButton" id="computeStatsButton" src="imagenes/Pokedex.png" alt="Mostrar estadísticas">
+      <img class="clickMeImg" id="clickMe" src="imagenes/clickme2.png" alt="Click Me">
     </div>
     <div class="sorted" id="sorted">
       <div id="pokemonList"></div>
-      <div id="pokemonStatistics"></div>
+    </div>
+    <div class="pokemonStatisticsSec" id="pokemonStatisticsSec">
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de Pokemon</th>
+            <th>Cantidad de Pokemons</th>
+          </tr>
+        </thead>
+        <tbody id="pokemonStatistics">
+        </tbody>
+      </table>
     </div>
 
     <!-- Se agrega seccion de filtrado-->
     <div class="filtered" id="filtered">
       <div class="filterOptions" id="filterOptions">
         <ul>
-          <li><select name="orderOptions" id="orderOptions">
+          <li>
+            <select name="orderOptions" id="orderOptions">
               <option value="1">Organizar por:</option>
               <option value="id">Id</option>
               <option value="name">Nombre</option>
@@ -39,7 +52,7 @@
               <option value="3">Descendente</option>
             </select>
           </li>
-          <li><h3>TYPE</h3></li>
+          <li><h3>TIPO</h3></li>
           <li><input type="checkbox" name="cbox" value="Grass"> <label for="cbox">Grass</label></li>
           <li><input type="checkbox" name="cbox" value="Poison"> <label for="cbox">Poison</label></li>
           <li><input type="checkbox" name="cbox" value="Fire"> <label for="cbox">Fire</label></li>
