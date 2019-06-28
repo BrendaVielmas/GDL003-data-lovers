@@ -1,4 +1,5 @@
 
+document.getElementById("filterOptions").style.display = "none";
 //Esta función es para filtrar los Pokemon
 let condition = () => {
 	const pokemonList = document.getElementById("pokemonList");
@@ -39,6 +40,7 @@ let computeStats =() => {
 };
 
 let showAllPokemons = () => {
+	document.getElementById("filterOptions").style.display = "block";
 	let orderedPokemon = window.data.sortData(POKEMON.pokemon, "id", "Ascendente");
 	pokemonList.innerHTML = "";
 	orderedPokemon.forEach(function (pokemon) {
