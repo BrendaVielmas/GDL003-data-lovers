@@ -13,7 +13,8 @@ let condition = () => {
 	let firstListOfTypeOfPokemon = [];
 	document.querySelectorAll('input[name="cbox"]:checked').forEach((checkbox) => {
 		firstListOfTypeOfPokemon = firstListOfTypeOfPokemon.concat([checkbox.value]);
- 	})
+	 })
+	 
  	filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
  	let orderedPokemon = window.data.sortData(filteredPokemon, optionSelectInText, formSelectInText);
 	pokemonListFiltered.innerHTML = "";
