@@ -10,15 +10,21 @@ body,html  {
    background-position: center center;
    background-size: cover;
 }
+.container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 .principalLogo {
-  width: 280px;
+  width: 28%;
   height: 110px;
   display:block;
   margin:auto;
 }
 .pokemonVideo {
-  width: 600px;
-  height: 350px;
+  width: 60%;
+  height: 300px;
   display:block;
   margin: auto;
   margin-top: 10px;
@@ -26,56 +32,58 @@ body,html  {
 }
 .sorted,.pokemonListFiltered,.otherBtn {
   margin:auto;
-  width: 900px;
+  width: 95%;
   margin-top: 20px;
   text-align: center;
   color: #000;
 }
 .clickMeImg{
-  width: 130px;
+  width: 13%;
   height: 130px;
 }
 .pokeBallGif {
-  width: 130px;
+  width: 13%;
   height: 130px;
   margin:auto;
   display:inline-block;
   cursor:pointer;
 }
 .computeStatsButton {
-  width: 170px;
+  width: 17%;
   height: 130px;
   margin:auto;
   display:inline-block;
   cursor:pointer;
 }
 .pokeBallBtn {
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
   margin-top: 20px;
   cursor:pointer;
 }
 .pokeBallBtn:hover {
-  width: 84px;
-  height: 84px;
+  width: 80px;
+  height: 80px;
 }
 h3 {
   text-decoration: underline;
 }
 .filterOptions {
+  width: 20%;
+  height: 16000px;
   float: left;
   left: 0;
   font-size: 18px;
   color:#FFF;
-  display: inline-block;
   padding: 10px;
+  box-sizing:border-box;
 }
 .filterOptions ul {
   list-style: none;
 }
 
 .cardOfPokemon,.pokemonList {
-  width: 230px;
+  max-width: 25%;
   height: 300px;
   text-align: center;
   float: left;
@@ -83,22 +91,24 @@ h3 {
   padding: 5px;
   margin: 9px;
   border-radius: 15px;
+  box-sizing:border-box;
 }
 .pokemonStatisticsSec {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   color: #fff;
-  display: inline-block;
   float: right;
   margin-top: 9px;
   padding: 4px;
   right: 0;
   text-align: center;
   width: 20%;
+  box-sizing:border-box;
 }
 select{
   border-radius: 4px;
   padding: 5px;
   margin-bottom: 5px;
   background: rgba(255, 255, 255 , 0.8);
+  box-sizing:border-box;
 }
