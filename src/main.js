@@ -1,24 +1,26 @@
 
+//Objetos ocultos al inicio de la página
 document.getElementById("filterOptions").style.display = "none";
 document.getElementById("pokemonStatisticsSec").style.display = "none";
+
 let filteredPokemon;
-//Esta función es para filtrar los Pokemon
+//Filtrar los Pokemon ya mostrados
 let condition = () => {
-	const pokemonList = document.getElementById("pokemonList");
 	const optionSelect = document.getElementById("orderOptions");
 	const formSelect = document.getElementById("orderForms");
-	const optionSelectInText = optionSelect.options[optionSelect.selectedIndex].value;
+	const optionSelectInValue = optionSelect.options[optionSelect.selectedIndex].value;
 	const formSelectInText = formSelect.options[formSelect.selectedIndex].text;
 	const pokemonListFiltered = document.getElementById ("pokemonListFiltered");
 	let firstListOfTypeOfPokemon = [];
 	document.querySelectorAll('input[name="cbox"]:checked').forEach((checkbox) => {
 		firstListOfTypeOfPokemon = firstListOfTypeOfPokemon.concat([checkbox.value]);
-	 })
-	 
- 	filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
- 	let orderedPokemon = window.data.sortData(filteredPokemon, optionSelectInText, formSelectInText);
+	});
+/* " $ {..}" significa meter una variable en un string
+	 `...` significa hacer un string de varias lineas */
+	filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
+	let orderedPokemon = window.data.sortData(filteredPokemon, optionSelectInValue, formSelectInText);
 	pokemonListFiltered.innerHTML = "";
-	filteredPokemon.forEach(function (pokemon) {
+	orderedPokemon.forEach(function (pokemon) {
 		pokemonListFiltered.innerHTML += `
 		<div class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
@@ -30,8 +32,7 @@ let condition = () => {
 
 	});
 };
-
-
+//Mostrar estadisticas de los Pokemon
 let computeStats =() => {
 	const pokemonStatistics = document.getElementById("pokemonStatistics");
 	let countOfTypeOfPokemon = window.data.computeStats(filteredPokemon);
@@ -45,8 +46,9 @@ let computeStats =() => {
 		</tr>`;
 	});
 };
-
+//Mostrar todos los Pokemon en forma ascendente por ID al inicio de la página
 let showAllPokemons = () => {
+	const pokemonListFiltered = document.getElementById("pokemonListFiltered");
 	document.getElementById("filterOptions").style.display = "block";
 	filteredPokemon = window.data.sortData(POKEMON.pokemon, "id", "Ascendente");
 	pokemonListFiltered.innerHTML = "";
@@ -61,7 +63,8 @@ let showAllPokemons = () => {
 		</div>`;
 
 	});
-}
+};
+//Sección de botones
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
 document.getElementById("pokeBallBtn").addEventListener("click", condition);
 document.getElementById("pokeBallGif").addEventListener("click", showAllPokemons);
