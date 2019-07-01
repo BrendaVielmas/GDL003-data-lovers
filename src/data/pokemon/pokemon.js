@@ -6,6 +6,6 @@ request.send(null);
 request.onreadystatechange = function() {
   if ( request.readyState === 4 && request.status === 200 ) {
     POKEMON = JSON.parse(request.responseText);
-    
+
   }
 }
