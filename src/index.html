@@ -12,7 +12,10 @@
     <div class= container> 
       <!-- Pagina de inicio-->
       <img class="principalLogo" src="imagenes/Pokemonlogo.png" alt="logo">
-        <iframe class="pokemonVideo" src="videos/welcomeVideo.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <video class="pokemonVideo" controls autoplay muted>
+          <source class="pokemonVideo" src="videos/welcomeVideo.mp4">
+        </video>
+         <!--<iframe class="pokemonVideo" src="videos/welcomeVideo.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
       <div class="otherBtn">
         <img class="pokeBallGif" id="pokeBallGif" src="imagenes/pakeball3.gif" alt="Pokeball Button">
@@ -36,36 +39,36 @@
       <!-- Se agrega seccion de filtrado-->
         <div class="filterOptions" id="filterOptions">
           <ul>
-            <li>
-              <select name="orderOptions" id="orderOptions">
-                <option value="1">Organizar por:</option>
-                <option value="id">Id</option>
-                <option value="name">Nombre</option>
-              </select>
-            </li>
-            <li>
-              <select name="orderForms" id="orderForms">
-                <option value="1">Orden:</option>
-                <option value="2">Ascendente</option>
-                <option value="3">Descendente</option>
-              </select>
-            </li>
+            <li><h3>Ordenar por:</h3></li>
+              <li>
+                <select name="orderOptions" id="orderOptions">
+                  <option value="id">Id</option>
+                  <option value="name">Nombre</option>
+                </select>
+              </li>
+              <li>
+                <select name="orderForms" id="orderForms">
+                  <option value="2">Ascendente</option>
+                  <option value="3">Descendente</option>
+                </select>
+              </li>
             <li><h3>TIPO</h3></li>
-            <li><input type="checkbox" name="cbox" value="Grass"> <label for="cbox">Grass</label></li>
-            <li><input type="checkbox" name="cbox" value="Poison"> <label for="cbox">Poison</label></li>
-            <li><input type="checkbox" name="cbox" value="Fire"> <label for="cbox">Fire</label></li>
-            <li><input type="checkbox" name="cbox" value="Flying"> <label for="cbox">Flying</label></li>
-            <li><input type="checkbox" name="cbox" value="Water"> <label for="cbox">Water</label></li>
-            <li><input type="checkbox" name="cbox" value="Bug"> <label for="cbox">Bug</label></li>
-            <li><input type="checkbox" name="cbox" value="Normal"> <label for="cbox">Normal</label></li>
-            <li><input type="checkbox" name="cbox" value="Electric"> <label for="cbox">Electric</label></li>
-            <li><input type="checkbox" name="cbox" value="Ground"> <label for="cbox">Ground</label></li>
-            <li><input type="checkbox" name="cbox" value="Fighting"> <label for="cbox">Fighting</label></li>
-            <li><input type="checkbox" name="cbox" value="Psychic"> <label for="cbox">Psychic</label></li>
-            <li><input type="checkbox" name="cbox" value="Rock"> <label for="cbox">Rock</label></li>
-            <li><input type="checkbox" name="cbox" value="Ice"> <label for="cbox">Ice</label></li>
-            <li><input type="checkbox" name="cbox" value="Ghost"> <label for="cbox">Ghost</label></li>
-            <li><input type="checkbox" name="cbox" value="Dragon"> <label for="cbox">Dragon</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Grass">Todos</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Grass">Grass</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Poison">Poison</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Fire">Fire</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Flying">Flying</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Water">Water</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Bug">Bug</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Normal">Normal</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Electric">Electric</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Ground">Ground</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Fighting">Fighting</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Psychic">Psychic</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Rock">Rock</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Ice">Ice</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Ghost">Ghost</label></li>
+            <li><label><input type="checkbox" name="cbox" value="Dragon">Dragon</label></li>
             <li><img class="pokeBallBtn" id="pokeBallBtn" src="imagenes/Pokeball.png" alt="Pokeball Button"></li>
           </ul>
         </div>

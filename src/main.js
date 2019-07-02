@@ -3,9 +3,12 @@
 document.getElementById("filterOptions").style.display = "none";
 document.getElementById("pokemonStatisticsSec").style.display = "none";
 
+
 let filteredPokemon;
 //Filtrar los Pokemon ya mostrados
 let condition = () => {
+	document.getElementById("pokemonListFiltered").style.display = "block";
+	document.getElementById("pokemonStatisticsSec").style.display = "none";
 	const optionSelect = document.getElementById("orderOptions");
 	const formSelect = document.getElementById("orderForms");
 	const optionSelectInValue = optionSelect.options[optionSelect.selectedIndex].value;
@@ -34,6 +37,7 @@ let condition = () => {
 };
 //Mostrar estadisticas de los Pokemon
 let computeStats =() => {
+	document.getElementById("pokemonListFiltered").style.display = "none";
 	const pokemonStatistics = document.getElementById("pokemonStatistics");
 	let countOfTypeOfPokemon = window.data.computeStats(filteredPokemon);
 	pokemonStatistics.innerHTML = "";
