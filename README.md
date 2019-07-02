@@ -20,10 +20,12 @@ Servirá de enciclopedia para todos aquellos usuarios que deseen introducirse al
 Personas mayores de 14 años que gusten del anime y la cultura oriental. Deberá tener conocimientos nulos o muy básicos de la historia de Pokemon.
 
 ### Necesidades del usuario
--
--
--
--
+- Contar con una página web sencilla que muestre solo la información relevante para aquellas personas que van iniciando en el mundo Pokemon.
+- Interfaz amigable, vistosa e interactiva.
+
+Se realizó una encuesta a 29 personas para conocer la información que debíamos mostrar según lo que el usuario consideraba inportante. Se hicieron modificaciones en base a dichas encuestas.
+
+![encuestas](https://cdn130.picsart.com/299784548521201.jpg?r1024x1024)
 
 ---
 
