@@ -6,10 +6,10 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/pokeballicon.ico">
-    
+
   </head>
   <body>
-    <div class= container> 
+    <div class= container>
       <!-- Pagina de inicio-->
       <img class="principalLogo" src="imagenes/Pokemonlogo.png" alt="logo">
         <video class="pokemonVideo" controls autoplay muted>
@@ -27,8 +27,8 @@
         <table>
           <thead>
             <tr>
-              <th>Tipo de Pokemon</th>
-              <th>Cantidad de Pokemons</th>
+              <th>Pokemon Type</th>
+              <th>Pokemon Quantity</th>
             </tr>
           </thead>
           <tbody id="pokemonStatistics">
@@ -39,21 +39,21 @@
       <!-- Se agrega seccion de filtrado-->
         <div class="filterOptions" id="filterOptions">
           <ul>
-            <li><h3>Ordenar por:</h3></li>
+            <li><h3>Sort by:</h3></li>
               <li>
                 <select name="orderOptions" id="orderOptions">
                   <option value="id">Id</option>
-                  <option value="name">Nombre</option>
+                  <option value="name">Name</option>
                 </select>
               </li>
               <li>
                 <select name="orderForms" id="orderForms">
-                  <option value="2">Ascendente</option>
-                  <option value="3">Descendente</option>
+                  <option value="2">Ascending</option>
+                  <option value="3">Descending</option>
                 </select>
               </li>
-            <li><h3>TIPO</h3></li>
-            <li><label><input type="checkbox" name="cbox" value="Grass">Todos</label></li>
+            <li><h3>Type:</h3></li>
+            <li><label><input type="checkbox" name="cbox" value="Grass">All</label></li>
             <li><label><input type="checkbox" name="cbox" value="Grass">Grass</label></li>
             <li><label><input type="checkbox" name="cbox" value="Poison">Poison</label></li>
             <li><label><input type="checkbox" name="cbox" value="Fire">Fire</label></li>
@@ -74,7 +74,7 @@
         </div>
         <div class="pokemonListFiltered" id="pokemonListFiltered">
         </div>
-      
+
       <script src="./data/pokemon/pokemon.js"></script>
       <script src="data.js"></script>
       <script src="main.js"></script>
