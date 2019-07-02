@@ -11,7 +11,7 @@ body,html  {
    background-size: cover;
 }
 .container {
-  width: 80%;
+  width: 90%;
   max-width: 1000px;
   margin: 0 auto;
   overflow: hidden;
@@ -69,7 +69,7 @@ h3 {
   text-decoration: underline;
 }
 .filterOptions {
-  width: 20%;
+  width: 25%;
   height: 16000px;
   float: left;
   left: 0;
@@ -82,8 +82,8 @@ h3 {
   list-style: none;
 }
 
-.cardOfPokemon,.pokemonList {
-  max-width: 25%;
+.cardOfPokemon {
+  width: 20%;
   height: 300px;
   text-align: center;
   float: left;
