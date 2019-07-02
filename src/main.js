@@ -14,19 +14,10 @@ let condition = () => {
 	const optionSelectInValue = optionSelect.options[optionSelect.selectedIndex].value;
 	const formSelectInText = formSelect.options[formSelect.selectedIndex].text;
 	const pokemonListFiltered = document.getElementById ("pokemonListFiltered");
-	let isCheckedCboxFather = document.getElementById("cboxFather").checked;
-	if (isCheckedCboxFather = true) { 
-		document.getElementsByClassName("cbox").checked;
-	} else { 
-		let firstListOfTypeOfPokemon = [];
-		document.querySelectorAll('input[name="cbox"]:checked').forEach((checkbox) => {
-			firstListOfTypeOfPokemon = firstListOfTypeOfPokemon.concat([checkbox.value]);
-		});
-}
-	/*let firstListOfTypeOfPokemon = [];
+	let firstListOfTypeOfPokemon = [];
 	document.querySelectorAll('input[name="cbox"]:checked').forEach((checkbox) => {
 		firstListOfTypeOfPokemon = firstListOfTypeOfPokemon.concat([checkbox.value]);
-	});*/
+	});
 /* " $ {..}" significa meter una variable en un string
 	 `...` significa hacer un string de varias lineas */
 	filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
