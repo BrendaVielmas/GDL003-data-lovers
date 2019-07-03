@@ -33,7 +33,8 @@ window.data = {
 	sortData : (input, sortBy, sortOrder) => {
 		let output;
 		//Si sortOrder es igual a "Ascendente"
-		if (sortOrder == "Ascendente") {
+		if (sortOrder == "Ascending") {
+			
 			//output es igual a acomodar la data con argumento a = pokemon 1, b = pokemon 2
 			output = input.sort((a, b) => { 
 				//Si a es menor que b según criterio de ordenamiento
@@ -48,7 +49,7 @@ window.data = {
 			});
 		}
 		//Si sortOrder es igual a "Descendente" igual que arriba pero con valores inversos
-		if (sortOrder == "Descendente") {
+		if (sortOrder == "Descending") {
 			output = input.sort((a, b) => {
 				if (a[sortBy] < b[sortBy]) {
 					return 1;

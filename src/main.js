@@ -4,7 +4,7 @@ document.getElementById("filterOptions").style.display = "none";
 document.getElementById("pokemonStatisticsSec").style.display = "none";
 
 
-let filteredPokemon;
+let filteredPokemon ;
 //Filtrar los Pokemon ya mostrados
 let condition = () => {
 	document.getElementById("pokemonListFiltered").style.display = "block";
@@ -23,7 +23,7 @@ let condition = () => {
 	filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
 	let orderedPokemon = window.data.sortData(filteredPokemon, optionSelectInValue, formSelectInText);
 	pokemonListFiltered.innerHTML = "";
-	orderedPokemon.forEach(function (pokemon) {
+	orderedPokemon.forEach((pokemon) => {
 		pokemonListFiltered.innerHTML += `
 		<div class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
@@ -41,7 +41,7 @@ let computeStats =() => {
 	const pokemonStatistics = document.getElementById("pokemonStatistics");
 	let countOfTypeOfPokemon = window.data.computeStats(filteredPokemon);
 	pokemonStatistics.innerHTML = "";
-	Object.keys(countOfTypeOfPokemon).forEach(function (type) {
+	Object.keys(countOfTypeOfPokemon).forEach((type) => {
 		document.getElementById("pokemonStatisticsSec").style.display = "block";
 		pokemonStatistics.innerHTML += `
 		<tr>
@@ -54,9 +54,9 @@ let computeStats =() => {
 let showAllPokemons = () => {
 	const pokemonListFiltered = document.getElementById("pokemonListFiltered");
 	document.getElementById("filterOptions").style.display = "block";
-	filteredPokemon = window.data.sortData(POKEMON.pokemon, "id", "Ascendente");
+	filteredPokemon = window.data.sortData(POKEMON.pokemon, "id", "Ascending");
 	pokemonListFiltered.innerHTML = "";
-	filteredPokemon.forEach(function (pokemon) {
+	filteredPokemon.forEach((pokemon) => {
 		pokemonListFiltered.innerHTML += `
 		<div class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
@@ -65,9 +65,22 @@ let showAllPokemons = () => {
 		<p>Type: ${pokemon.type}</p>
 		<p>Weaknesses: ${pokemon.weaknesses}</p>
 		</div>`;
-
 	});
 };
+//Botón All
+/*let selectAll = () => { 	
+	//document.getElementById("f1").checked;
+	//document.querySelectorAll('input[name="cbox"]:checked');
+	if (cboxAll.checked) { document.querySelectorAll('input[name="cbox"]').checked;
+	}
+};*/
+
+const cboxAllFuntion = document.querySelector("#cboxAll");
+cboxAllFuntion.addEventListener("change", (e) => {
+	if(cboxAllFuntion.checked) {
+		document.getElementById("f1").checked;
+	};
+});
 //Sección de botones
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
 document.getElementById("pokeBallBtn").addEventListener("click", condition);
