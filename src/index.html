@@ -5,26 +5,70 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="imagenes/pokeballicon.ico">
-
+    <link rel="shortcut icon" type="image/x-icon" href="images/pokeballicon.ico">
   </head>
+
   <body>
     <div class= "container">
       <!-- Pagina de inicio-->
       <img class="principalLogo" src="imagenes/Pokemonlogo.png" alt="logo">
+    <section class= "container">
+      <!-- Se agrega sección de inicio-->
+      <section class= "welcomePage">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <img class="principalLogo" src="images/Pokemonlogo.png" alt="logo">
         <video class="pokemonVideo" controls autoplay muted>
           <source class="pokemonVideo" src="videos/welcomeVideo.mp4">
         </video>
-         <!--<iframe class="pokemonVideo" src="videos/welcomeVideo.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-      <div class="otherBtn">
-        <img class="pokeBallGif" id="pokeBallGif" src="imagenes/pakeball3.gif" alt="Pokeball Button">
-        <img class="clickMeImg" id="clickMe" src="imagenes/clickme.png" alt="Click Me">
-        <img class="computeStatsButton" id="computeStatsButton" src="imagenes/Pokedex.png" alt="Mostrar estadísticas">
-        <img class="clickMeImg" id="clickMe2" src="imagenes/clickme2.png" alt="Click Me">
-      </div>
-      <div class="pokemonStatisticsSec" id="pokemonStatisticsSec">
-        <table>
+        <!--<iframe class="pokemonVideo" src="videos/welcomeVideo.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+        <img class="pokeBallGif" id="pokeBallGif" src="images/Pokeballmoving.gif" alt="Show all Pokemon Button">
+        <img class="clickMeImg" id="clickMe" src="images/clickme.png" alt="Discover the pokemon world arrow">
+        <img class="computeStatsButton" id="computeStatsButton" src="images/Pokedex.png" alt="Show Statistics Button">
+        <img class="clickMeImg" id="clickMe2" src="images/clickme2.png" alt="See statistics arrow">
+      </section>
+
+      <!-- Se agrega sección de filtrado y ordenado-->
+      <aside class="filterOptions" id="filterOptions">
+        <ul>
+          <li><h3>Sort by:</h3></li>
+          <li>
+            <select name="orderOptions" id="orderOptions">
+              <option value="id">Id</option>
+              <option value="name">Name</option>
+            </select>
+          </li>
+          <li>
+            <select name="orderForms" id="orderForms">
+              <option value="2">Ascending</option>
+              <option value="3">Descending</option>
+            </select>
+          </li>
+          <li><h3>Type:</h3></li>
+          <li><label><input type="checkbox" name="cbox" value="Grass">All</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Grass">Grass</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Poison">Poison</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Fire">Fire</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Flying">Flying</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Water">Water</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Bug">Bug</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Normal">Normal</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Electric">Electric</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Ground">Ground</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Fighting">Fighting</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Psychic">Psychic</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Rock">Rock</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Ice">Ice</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Ghost">Ghost</label></li>
+          <li><label><input type="checkbox" name="cbox" value="Dragon">Dragon</label></li>
+          <li><img class="pokeBallBtn" id="pokeBallBtn" src="images/Pokeball.png" alt="Pokeball Button"></li>
+        </ul>
+      </aside>
+      <section class="pokemonListFiltered" id="pokemonListFiltered">
+        <!-- Aquí se mostrarán las tarjetas de los Pokemon filtradas y ordenadas-->
+      </section>
+      <!-- Se agrega sección de estadísticas-->
+      <section class="pokemonStatisticsSec" id="pokemonStatisticsSec">
+        <table class="tableStats">
           <thead>
             <tr>
               <th>Pokemon Type</th>
@@ -32,54 +76,13 @@
             </tr>
           </thead>
           <tbody id="pokemonStatistics">
+            <!-- Aquí se mostrarán en tabla los resultados de las estadísticas-->
           </tbody>
         </table>
-      </div>
 
-      <!-- Se agrega seccion de filtrado-->
-        <div class="filterOptions" id="filterOptions">
-          <ul>
-            <li><h3>Sort by:</h3></li>
-              <li>
-                <select name="orderOptions" id="orderOptions">
-                  <option value="id">Id</option>
-                  <option value="name">Name</option>
-                </select>
-              </li>
-              <li>
-                <select name="orderForms" id="orderForms">
-                  <option value="2">Ascending</option>
-                  <option value="3">Descending</option>
-                </select>
-              </li>
-            <li><h3>Type:</h3></li>
-            <li><label><input type="checkbox" id="cboxAll">All</label></li>
-            <div id="forCboxAll">
-              <li><label><input type="checkbox" id= "f1" name="cbox" value="Grass">Grass</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Poison">Poison</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Fire">Fire</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Flying">Flying</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Water">Water</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Bug">Bug</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Normal">Normal</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Electric">Electric</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Ground">Ground</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Fighting">Fighting</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Psychic">Psychic</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Rock">Rock</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Ice">Ice</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Ghost">Ghost</label></li>
-              <li><label><input type="checkbox" name="cbox" value="Dragon">Dragon</label></li>
-            </div>
-            <li><img class="pokeBallBtn" id="pokeBallBtn" src="imagenes/Pokeball.png" alt="Pokeball Button"></li>
-          </ul>
-        </div>
-        <div class="pokemonListFiltered" id="pokemonListFiltered">
-        </div>
-
-      <script src="./data/pokemon/pokemon.js"></script>
-      <script src="data.js"></script>
-      <script src="main.js"></script>
-  </div>
+    <!-- Links para ligar los archivos javascript-->
+    <script src="./data/pokemon/pokemon.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
   </body>
-  </html>
+</html>

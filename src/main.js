@@ -25,14 +25,13 @@ let condition = () => {
 	pokemonListFiltered.innerHTML = "";
 	orderedPokemon.forEach((pokemon) => {
 		pokemonListFiltered.innerHTML += `
-		<div class = "cardOfPokemon" >
+		<section class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
 		<p><h3>${pokemon.name}</h3></p>
 		<p>Id: ${pokemon.id}</p>
 		<p>Type: ${pokemon.type}</p>
 		<p>Weaknesses: ${pokemon.weaknesses}</p>
-		</div>`;
-
+		</section>`;
 	});
 };
 //Mostrar estadisticas de los Pokemon
@@ -54,17 +53,19 @@ let computeStats =() => {
 let showAllPokemons = () => {
 	const pokemonListFiltered = document.getElementById("pokemonListFiltered");
 	document.getElementById("filterOptions").style.display = "block";
+	document.getElementById("pokemonListFiltered").style.display = "block";
+	document.getElementById("pokemonStatisticsSec").style.display = "none";
 	filteredPokemon = window.data.sortData(POKEMON.pokemon, "id", "Ascending");
 	pokemonListFiltered.innerHTML = "";
 	filteredPokemon.forEach((pokemon) => {
 		pokemonListFiltered.innerHTML += `
-		<div class = "cardOfPokemon" >
+		<section class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
 		<p><h3>${pokemon.name}</h3></p>
 		<p>Id: ${pokemon.id}</p>
 		<p>Type: ${pokemon.type}</p>
 		<p>Weaknesses: ${pokemon.weaknesses}</p>
-		</div>`;
+		</section>`;
 	});
 };
 //Botón All
