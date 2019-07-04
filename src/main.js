@@ -78,7 +78,7 @@ let showAllPokemons = () => {
 const cboxAllFuntion = document.querySelector("#cboxAll");
 cboxAllFuntion.addEventListener("change", (e) => {
 	if(cboxAllFuntion.checked) {
-		document.getElementById("f1").checked;
+		document.getElementByName("cbox").checked = true;
 	};
 });
 //Sección de botones
