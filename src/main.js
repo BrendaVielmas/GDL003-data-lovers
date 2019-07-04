@@ -70,7 +70,7 @@ let showAllPokemons = () => {
 };
 //Botón All
 const cboxAllFuntion = document.querySelector("#cboxAll");
-let cboxForAll = document.querySelectorAll('input[name="cbox"]')
+let cboxForAll = document.querySelectorAll('input[name="cbox"]');
 cboxAllFuntion.addEventListener("change", (e) => {
 	if(cboxAllFuntion.checked) {
 		cboxForAll.forEach((checkbox) => {

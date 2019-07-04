@@ -9,9 +9,6 @@
   </head>
 
   <body>
-    <div class= "container">
-      <!-- Pagina de inicio-->
-      <img class="principalLogo" src="imagenes/Pokemonlogo.png" alt="logo">
     <section class= "container">
       <!-- Se agrega sección de inicio-->
       <section class= "welcomePage">
@@ -44,7 +41,7 @@
             </select>
           </li>
           <li><h3>Type:</h3></li>
-          <li><label><input type="checkbox" name="cbox" value="Grass">All</label></li>
+          <li><label><input type="checkbox" id="cboxAll">All</label></li>
           <li><label><input type="checkbox" name="cbox" value="Grass">Grass</label></li>
           <li><label><input type="checkbox" name="cbox" value="Poison">Poison</label></li>
           <li><label><input type="checkbox" name="cbox" value="Fire">Fire</label></li>
@@ -79,7 +76,8 @@
             <!-- Aquí se mostrarán en tabla los resultados de las estadísticas-->
           </tbody>
         </table>
-
+      </section>
+    </section>
     <!-- Links para ligar los archivos javascript-->
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
