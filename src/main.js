@@ -83,7 +83,13 @@ cboxAllFuntion.addEventListener("change", (e) => {
 	}
 });
 
+/*let ChartsforType = () => {
+	return computeStats;
+	console.log(computeStats);
+};*/
+
 //Sección de botones
+//document.getElementById("computeStatsButton").addEventListener("click", ChartsforType);
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
 document.getElementById("pokeBallBtn").addEventListener("click", condition);
 document.getElementById("pokeBallGif").addEventListener("click", showAllPokemons);
