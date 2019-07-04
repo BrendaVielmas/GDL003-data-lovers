@@ -4,7 +4,7 @@ document.getElementById("filterOptions").style.display = "none";
 document.getElementById("pokemonStatisticsSec").style.display = "none";
 
 
-let filteredPokemon;
+let filteredPokemon ;
 //Filtrar los Pokemon ya mostrados
 let condition = () => {
 	document.getElementById("pokemonListFiltered").style.display = "block";
@@ -23,7 +23,7 @@ let condition = () => {
 	filteredPokemon = window.data.filterData(POKEMON.pokemon, firstListOfTypeOfPokemon);
 	let orderedPokemon = window.data.sortData(filteredPokemon, optionSelectInValue, formSelectInText);
 	pokemonListFiltered.innerHTML = "";
-	orderedPokemon.forEach(function (pokemon) {
+	orderedPokemon.forEach((pokemon) => {
 		pokemonListFiltered.innerHTML += `
 		<section class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
@@ -40,7 +40,7 @@ let computeStats =() => {
 	const pokemonStatistics = document.getElementById("pokemonStatistics");
 	let countOfTypeOfPokemon = window.data.computeStats(filteredPokemon);
 	pokemonStatistics.innerHTML = "";
-	Object.keys(countOfTypeOfPokemon).forEach(function (type) {
+	Object.keys(countOfTypeOfPokemon).forEach((type) => {
 		document.getElementById("pokemonStatisticsSec").style.display = "block";
 		pokemonStatistics.innerHTML += `
 		<tr>
@@ -57,7 +57,7 @@ let showAllPokemons = () => {
 	document.getElementById("pokemonStatisticsSec").style.display = "none";
 	filteredPokemon = window.data.sortData(POKEMON.pokemon, "id", "Ascending");
 	pokemonListFiltered.innerHTML = "";
-	filteredPokemon.forEach(function (pokemon) {
+	filteredPokemon.forEach((pokemon) => {
 		pokemonListFiltered.innerHTML += `
 		<section class = "cardOfPokemon" >
 		<img src="${pokemon.img}">
@@ -66,9 +66,23 @@ let showAllPokemons = () => {
 		<p>Type: ${pokemon.type}</p>
 		<p>Weaknesses: ${pokemon.weaknesses}</p>
 		</section>`;
-
 	});
 };
+//Botón All
+const cboxAllFuntion = document.querySelector("#cboxAll");
+let cboxForAll = document.querySelectorAll('input[name="cbox"]')
+cboxAllFuntion.addEventListener("change", (e) => {
+	if(cboxAllFuntion.checked) {
+		cboxForAll.forEach((checkbox) => {
+			checkbox.checked = true;
+		});
+	}else {
+		cboxForAll.forEach((checkbox) => {
+			checkbox.checked = false;
+		});
+	}
+});
+
 //Sección de botones
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
 document.getElementById("pokeBallBtn").addEventListener("click", condition);
