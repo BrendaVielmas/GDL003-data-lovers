@@ -5,51 +5,46 @@ body,html  {
    height: 100%;
    position: relative;
    font-family:'Ubuntu', sans-serif;
-   background-image: url("https://cdn130.picsart.com/299782498130201.gif?r1024x1024");
+   background-image: url("https://cdn140.picsart.com/299781784278201.gif?r1024x1024");
    background-attachment: fixed;
    background-position: center center;
    background-size: cover;
 }
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: auto;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .principalLogo {
-  width: 28%;
-  height: 110px;
+  width: 38%;
+  height: 120px;
   display:block;
   margin:auto;
 }
 .pokemonVideo {
-  width: 60%;
-  height: 300px;
+  width: 70%;
+  height: 340px;
   display:block;
   margin: auto;
   margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 10px;
 }
-.sorted,.pokemonListFiltered,.otherBtn {
+.pokemonListFiltered,.welcomePage {
   margin:auto;
-  width: 95%;
+  width: 100%;
   margin-top: 20px;
   text-align: center;
-  color: #000;
+  color: #fff;
 }
-.clickMeImg{
-  width: 13%;
+.clickMeImg {
+  width: 15%;
   height: 130px;
 }
-.pokeBallGif {
-  width: 13%;
-  height: 130px;
-  margin:auto;
-  display:inline-block;
-  cursor:pointer;
-}
-.computeStatsButton {
-  width: 17%;
+.pokeBallGif,.computeStatsButton {
+  width: 15%;
   height: 130px;
   margin:auto;
   display:inline-block;
@@ -69,46 +64,112 @@ h3 {
   text-decoration: underline;
 }
 .filterOptions {
-  width: 25%;
-  height: 16000px;
+  width: 20%;
+  height: 17000px;
   float: left;
   left: 0;
   font-size: 18px;
-  color:#FFF;
+  color:#000;
   padding: 10px;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 .filterOptions ul {
+  font-weight: bold;
   list-style: none;
 }
 
 .cardOfPokemon {
-  width: 20%;
-  height: 300px;
+  width: 24%;
+  height: 310px;
   text-align: center;
   float: left;
-  background: rgba(195 , 195, 195, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   padding: 5px;
-  margin: 9px;
+  margin: 7px;
   border-radius: 15px;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 .pokemonStatisticsSec {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   color: #fff;
-  float: right;
-  margin-top: 9px;
+  float: left;
+  margin-top: 20px;
   padding: 4px;
-  right: 0;
   text-align: center;
-  width: 20%;
-  box-sizing:border-box;
+  width: 50%;
+  box-sizing: border-box;
+}
+.tableStats{
+  margin: auto;
 }
 select{
+  color: #fff;
   border-radius: 4px;
   padding: 5px;
   margin-bottom: 5px;
-  background: rgba(255, 255, 255 , 0.8);
-  box-sizing:border-box;
+  background: rgba(0, 0, 0 , 0.9);
+  box-sizing: border-box;
+}
+
+
+/*@media screen and (min-width: 781px) and (max-width: 1024px) {
+}*/
+
+@media screen and (min-width: 480px) and (max-width: 780px) {
+  .clickMeImg,.pokeBallGif,.computeStatsButton{
+    width: 19%;
+    height: 130px;
+  }
+  .pokemonStatisticsSec{
+    width: 60%;
+    font-size: 14px;
+  }
+  .filterOptions{
+    width: 30%;
+    height: 49500px;
+    font-size: 12px;
+    margin-right: 20px;
+  }
+  .cardOfPokemon {
+    width: 55%;
+    height: 310px;
+    font-size: 15px;
+  }
+  .pokemonVideo{
+    width: 90%;
+  }
+  .principalLogo{
+    width: 48%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .clickMeImg,.pokeBallGif,.computeStatsButton{
+    width: 33%;
+    height: 120px;
+  }
+  .pokemonStatisticsSec{
+    width: 55%;
+    font-size: 12px;
+  }
+  .filterOptions{
+    width: 35%;
+    height: 49500px;
+    font-size: 12px;
+  }
+  .cardOfPokemon {
+    width: 56%;
+    height: 300px;
+    font-size: 13px;
+  }
+  select {
+    width: 100%;
+    font-size: 12px;
+  }
+  .pokemonVideo{
+    width: 90%;
+  }
+  .principalLogo{
+    width: 75%;
+  }
 }

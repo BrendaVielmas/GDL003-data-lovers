@@ -2,18 +2,18 @@
 window.data = {
 
 	/* El parámetro input(arreglo de pokemons) entrega los datos.
-		pokemonTypes (arreglo de tipos) indica el valor por 
+		pokemonTypes (arreglo de tipos) indica el valor por
 		el cual se va a filtrar el objeto.*/
 	filterData : (input, pokemonTypes) => {
 		/*Se hace una función con argumento "pokemon" que está filtrando
-			la data dentro de una variable*/ 
+			la data dentro de una variable*/
 		let filteredPokemons = input.filter((pokemon)  => {
 			//Aquí ningún pokemon está incluido
 			let hasAnyType = false;
-			/*Se hace la función con argumento "type" para cada(forEach) tipo 
+			/*Se hace la función con argumento "type" para cada(forEach) tipo
 				que se le de en "pokemonTypes" */
 			pokemonTypes.forEach( (type) => {
-				// Si tu pokemon tiene cualquiera de los tipos dados, 
+				// Si tu pokemon tiene cualquiera de los tipos dados,
 				if (pokemon.type.includes(type)) {
 					//incluyelo
 					hasAnyType = true;
@@ -28,14 +28,14 @@ window.data = {
 
 
 	/*El parámetro input entrega los datos.
-		sortBy dice con respecto a cuál de los campos de input se quiere ordenar. 
+		sortBy dice con respecto a cuál de los campos de input se quiere ordenar.
 		sortOrder indica orden: ascendente o descendente.*/
 	sortData : (input, sortBy, sortOrder) => {
 		let output;
 		//Si sortOrder es igual a "Ascendente"
-		if (sortOrder == "Ascendente") {
+		if (sortOrder == "Ascending") {
 			//output es igual a acomodar la data con argumento a = pokemon 1, b = pokemon 2
-			output = input.sort((a, b) => { 
+			output = input.sort((a, b) => {
 				//Si a es menor que b según criterio de ordenamiento
 				if (a[sortBy] < b[sortBy]) {
 					return -1;
@@ -48,7 +48,7 @@ window.data = {
 			});
 		}
 		//Si sortOrder es igual a "Descendente" igual que arriba pero con valores inversos
-		if (sortOrder == "Descendente") {
+		if (sortOrder == "Descending") {
 			output = input.sort((a, b) => {
 				if (a[sortBy] < b[sortBy]) {
 					return 1;
@@ -62,14 +62,14 @@ window.data = {
 		return output;
 	},
 
-	
+
 	computeStats : (input) => {
-		/*Se hace una función con argumento "counterType" (valor de la iteración 
-		anterior) y "currentPokemon" (elemento actual del arreglo) que está 
+		/*Se hace una función con argumento "counterType" (valor de la iteración
+		anterior) y "currentPokemon" (elemento actual del arreglo) que está
 		reduciendo la data dentro de una variable para guardar un objeto con las
 		repeticiones de cada tipo de pokemon*/
 		let countOfTypeOfPokemon = input.reduce((counterType, currentPokemon) => {
-			//Si el pokemon actual tiene dos tipos 
+			//Si el pokemon actual tiene dos tipos
 			if (currentPokemon.type.length == 2) {
 				//El 1er tipo obtiene indice 0
 				let type1 = currentPokemon.type[0];

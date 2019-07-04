@@ -17,10 +17,10 @@ Esta es una página web que permitirá **visualizar, filtrar, ordenar y sacar es
 Servirá de enciclopedia para todos aquellos usuarios que deseen introducirse al mundo Pokemon y conocer a cada uno de los personajes.
 
 ### Usuario objetivo
-Personas mayores de 14 años que gusten del anime y la cultura oriental. Deberá tener conocimientos nulos o muy básicos de la historia de Pokemon.
+Personas mayores de 14 años que gusten del anime y la cultura oriental. Deberá tener conocimientos nulos o muy básicos de la historia de Pokemon. Es necesario que cuente con bases en el idioma inglés para navegar por la interfaz.
 
 ### Necesidades del usuario
-- Contar con una página web sencilla que muestre solo la información relevante para aquellas personas que van iniciando en el mundo Pokemon.
+- Contar con una página web que muestre solo la información relevante para aquellas personas que van iniciando en el mundo Pokemon.
 - Interfaz amigable, vistosa e interactiva.
 
 Se realizó una encuesta a 29 personas para conocer la información que debíamos mostrar según lo que el usuario consideraba inportante. Se hicieron modificaciones en base a dichas encuestas.
