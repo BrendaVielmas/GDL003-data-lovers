@@ -68,13 +68,6 @@ let showAllPokemons = () => {
 	});
 };
 //Botón All
-/*let selectAll = () => { 	
-	//document.getElementById("f1").checked;
-	//document.querySelectorAll('input[name="cbox"]:checked');
-	if (cboxAll.checked) { document.querySelectorAll('input[name="cbox"]').checked;
-	}
-};*/
-
 const cboxAllFuntion = document.querySelector("#cboxAll");
 let cboxForAll = document.querySelectorAll('input[name="cbox"]')
 cboxAllFuntion.addEventListener("change", (e) => {
@@ -82,8 +75,13 @@ cboxAllFuntion.addEventListener("change", (e) => {
 		cboxForAll.forEach((checkbox) => {
 			checkbox.checked = true;
 		});
-	};
+	}else {
+		cboxForAll.forEach((checkbox) => {
+			checkbox.checked = false;
+		});
+	}
 });
+
 //Sección de botones
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
 document.getElementById("pokeBallBtn").addEventListener("click", condition);
