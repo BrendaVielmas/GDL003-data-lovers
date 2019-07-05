@@ -38,7 +38,7 @@ let condition = () => {
 let computeStats =() => {
 	document.getElementById("pokemonListFiltered").style.display = "none";
 	document.getElementById("pokemonStatisticsSec").style.display = "block";
-	const pokemonStatistics = document.getElementById("pokemonStatistics");
+	const pokemonStatistics = document.getElementById("pokemonStatisticsSec");
 	let countOfTypeOfPokemon = window.data.computeStats(filteredPokemon);
 	pokemonStatistics.innerHTML = "";
 	//Se crea la tabla de datos para la gráfica
@@ -52,10 +52,10 @@ let computeStats =() => {
 	});
     //Definir opciones de la gráfica
     let optionsOfChart = {"title":"How Many Pokemons Total By Types",
-       "width":400,
-       "height":300};
+       "width":490,
+       "height":400};
 	//Crear y dibujar la gráfica pasando las opciones anteriores
-	let chart = new google.visualization.ColumnChart(pokemonStatistics);
+	let chart = new google.visualization.BarChart(pokemonStatistics);
 	chart.draw(dataTable, optionsOfChart);
 };
 //Mostrar todos los Pokemon en forma ascendente por ID al inicio de la página
@@ -78,7 +78,7 @@ let showAllPokemons = () => {
 	});
 };
 //Botón All
-const cboxAllFunction = document.querySelector("#cboxAll");
+const cboxAllFunction = document.getElementById("cboxAll");
 let cboxForAll = document.querySelectorAll('input[name="cbox"]');
 cboxAllFunction.addEventListener("change", () => {
 	if(cboxAllFunction.checked) {
