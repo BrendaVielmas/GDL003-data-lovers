@@ -103,45 +103,4 @@ window.data = {
 		//Regresa el total de las iteraciones
 		return countOfTypeOfPokemon;
 	}
-
-
-/*	let weaknessesBroken = input.reduce((counterType, currentPokemon) => {
-		
-	
-	
-	//Si el pokemon actual tiene dos tipos
-		if (currentPokemon.weaknesses.length == 2) {
-			//El 1er tipo obtiene indice 0
-			let type1 = currentPokemon.weaknesses[0];
-			//Si sale por primera vez el tipo de pokemon, vale 1
-			if (!counterType[type1]) {
-				counterType[type1] = 1;
-			//Si ya salió anteriormente el tipo de pokemon, vale la suma de counterType
-			//anterior + 1
-			}else {
-				counterType[type1] += 1;
-			}
-			//El 2do tipo obtiene indice 1 y se hace lo mismo que arriba
-			let type2 = currentPokemon.weaknesses[1];
-			if (!counterType[type2]) {
-				counterType[type2] = 1;
-			}else {
-				counterType[type2] += 1;
-			}
-		//Si solo tiene un tipo de pokemon se hace lo mismo
-		} else {
-			if (!counterType[currentPokemon.weaknesses]) {
-				counterType[currentPokemon.weaknesses] = 1;
-			}else {
-				counterType[currentPokemon.weaknesses] += 1;
-			}
-		}
-		//regresa el valor de la iteración acumulativa
-		return counterType;
-		//counterType va a ser un objeto vacío en la primer iteración
-	}, {});
-	//Regresa el total de las iteraciones
-	return countOfTypeOfPokemon;
-}*/
-
 };

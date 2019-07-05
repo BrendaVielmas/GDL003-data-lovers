@@ -37,17 +37,26 @@ let condition = () => {
 //Mostrar estadisticas de los Pokemon
 let computeStats =() => {
 	document.getElementById("pokemonListFiltered").style.display = "none";
+	document.getElementById("pokemonStatisticsSec").style.display = "block";
 	const pokemonStatistics = document.getElementById("pokemonStatistics");
 	let countOfTypeOfPokemon = window.data.computeStats(filteredPokemon);
 	pokemonStatistics.innerHTML = "";
-	Object.keys(countOfTypeOfPokemon).forEach((type) => {
-		document.getElementById("pokemonStatisticsSec").style.display = "block";
-		pokemonStatistics.innerHTML += `
-		<tr>
-			<td>${type}: </td>
-			<td>${countOfTypeOfPokemon[type]} / 151<td>
-		</tr>`;
+	//Se crea la tabla de datos para la gráfica
+	let dataTable = new google.visualization.DataTable();
+	//Se añaden columnas
+    dataTable.addColumn("string", "Type");
+    dataTable.addColumn("number", "Total");
+    //Se añade la información a graficar
+    Object.keys(countOfTypeOfPokemon).forEach((type) => {
+    	dataTable.addRow([type, countOfTypeOfPokemon[type]]);
 	});
+    //Definir opciones de la gráfica
+    let optionsOfChart = {"title":"How Many Pokemons Total By Types",
+       "width":400,
+       "height":300};
+	//Crear y dibujar la gráfica pasando las opciones anteriores
+	let chart = new google.visualization.ColumnChart(pokemonStatistics);
+	chart.draw(dataTable, optionsOfChart);
 };
 //Mostrar todos los Pokemon en forma ascendente por ID al inicio de la página
 let showAllPokemons = () => {
@@ -64,15 +73,15 @@ let showAllPokemons = () => {
 		<p><h3>${pokemon.name}</h3></p>
 		<p>Id: ${pokemon.id}</p>
 		<p>Type: ${pokemon.type}</p>
-		<p>Weaknesses: ${pokemon.weaknesses}</p>
+		<p>Weaknesses: ${pokemon.weaknesses.toString().replace(/,/g,", ")}</p>
 		</section>`;
 	});
 };
 //Botón All
-const cboxAllFuntion = document.querySelector("#cboxAll");
+const cboxAllFunction = document.querySelector("#cboxAll");
 let cboxForAll = document.querySelectorAll('input[name="cbox"]');
-cboxAllFuntion.addEventListener("change", (e) => {
-	if(cboxAllFuntion.checked) {
+cboxAllFunction.addEventListener("change", () => {
+	if(cboxAllFunction.checked) {
 		cboxForAll.forEach((checkbox) => {
 			checkbox.checked = true;
 		});
@@ -83,13 +92,9 @@ cboxAllFuntion.addEventListener("change", (e) => {
 	}
 });
 
-/*let ChartsforType = () => {
-	return computeStats;
-	console.log(computeStats);
-};*/
-
+//Carga la API de visualización (charts)
+google.charts.load('current', {'packages':['corechart']});
 //Sección de botones
-//document.getElementById("computeStatsButton").addEventListener("click", ChartsforType);
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
 document.getElementById("pokeBallBtn").addEventListener("click", condition);
 document.getElementById("pokeBallGif").addEventListener("click", showAllPokemons);
