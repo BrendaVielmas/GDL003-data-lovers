@@ -103,5 +103,4 @@ window.data = {
 		//Regresa el total de las iteraciones
 		return countOfTypeOfPokemon;
 	}
-
 };

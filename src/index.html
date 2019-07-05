@@ -41,6 +41,7 @@
             </select>
           </li>
           <li><h3>Type:</h3></li>
+
           <li><label><input type="checkbox" id="cboxAll">All</label></li>
           <li><label><input type="checkbox" name="cbox" value="Grass">Grass</label></li>
           <li><label><input type="checkbox" name="cbox" value="Poison">Poison</label></li>
@@ -65,20 +66,10 @@
       </section>
       <!-- Se agrega sección de estadísticas-->
       <section class="pokemonStatisticsSec" id="pokemonStatisticsSec">
-        <table class="tableStats">
-          <thead>
-            <tr>
-              <th>Pokemon Type</th>
-              <th>Pokemon Quantity</th>
-            </tr>
-          </thead>
-          <tbody id="pokemonStatistics">
             <!-- Aquí se mostrarán en tabla los resultados de las estadísticas-->
-          </tbody>
-        </table>
       </section>
-    </section>
     <!-- Links para ligar los archivos javascript-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
