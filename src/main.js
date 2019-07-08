@@ -62,7 +62,6 @@ let computeStats =() => {
 	//Crear y dibujar la gráfica pasando las opciones anteriores
 	let chart = new google.visualization.BarChart(pokemonStatistics);
 	chart.draw(dataTable, optionsOfChart);
-	document.getElementById("goToTheTopButton").style.display = "block";
 };
 
 //Mostrar todos los Pokemon en forma ascendente por ID al inicio de la página
