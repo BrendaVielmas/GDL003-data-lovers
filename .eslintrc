@@ -8,7 +8,8 @@
   "extends": "eslint:recommended",
   "globals": {
    "data": false,
-   "POKEMON" : false
+   "POKEMON" : false,
+   "google": false
   },
   "rules": {
     "no-console": 0,

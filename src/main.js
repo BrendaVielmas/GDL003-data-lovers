@@ -2,6 +2,7 @@
 //Objetos ocultos al inicio de la página
 document.getElementById("filterOptions").style.display = "none";
 document.getElementById("pokemonStatisticsSec").style.display = "none";
+document.getElementById("goToTheTopButton").style.display = "none";
 
 
 let filteredPokemon ;
@@ -30,14 +31,16 @@ let condition = () => {
 		<p><h3>${pokemon.name}</h3></p>
 		<p>Id: ${pokemon.id}</p>
 		<p>Type: ${pokemon.type}</p>
-		<p>Weaknesses: ${pokemon.weaknesses}</p>
+		<p>Weaknesses: ${pokemon.weaknesses.toString().replace(/,/g,", ")}</p>
 		</section>`;
 	});
+	document.getElementById("goToTheTopButton").style.display = "block";
 };
 //Mostrar estadisticas de los Pokemon
 let computeStats =() => {
 	document.getElementById("pokemonListFiltered").style.display = "none";
 	document.getElementById("pokemonStatisticsSec").style.display = "block";
+
 	const pokemonStatistics = document.getElementById("pokemonStatisticsSec");
 	let countOfTypeOfPokemon = window.data.computeStats(filteredPokemon);
 	pokemonStatistics.innerHTML = "";
@@ -48,16 +51,20 @@ let computeStats =() => {
     dataTable.addColumn("number", "Total");
     //Se añade la información a graficar
     Object.keys(countOfTypeOfPokemon).forEach((type) => {
-    	dataTable.addRow([type, countOfTypeOfPokemon[type]]);
+			dataTable.addRow([type, countOfTypeOfPokemon[type]]);
 	});
     //Definir opciones de la gráfica
-    let optionsOfChart = {"title":"How Many Pokemons Total By Types",
-       "width":490,
-       "height":400};
+		let optionsOfChart = {
+			"title":"How Many Pokemons Total By Type",
+			 colors:["#FECD05"],
+			 backgroundColor: {fillColor:"#F0EEF1", fillOpacity:0.8},
+		 };
 	//Crear y dibujar la gráfica pasando las opciones anteriores
 	let chart = new google.visualization.BarChart(pokemonStatistics);
 	chart.draw(dataTable, optionsOfChart);
+	document.getElementById("goToTheTopButton").style.display = "block";
 };
+
 //Mostrar todos los Pokemon en forma ascendente por ID al inicio de la página
 let showAllPokemons = () => {
 	const pokemonListFiltered = document.getElementById("pokemonListFiltered");
@@ -76,6 +83,7 @@ let showAllPokemons = () => {
 		<p>Weaknesses: ${pokemon.weaknesses.toString().replace(/,/g,", ")}</p>
 		</section>`;
 	});
+	document.getElementById("goToTheTopButton").style.display = "block";
 };
 //Botón All
 const cboxAllFunction = document.getElementById("cboxAll");
@@ -92,9 +100,15 @@ cboxAllFunction.addEventListener("change", () => {
 	}
 });
 
+//Función para regresar hasta arriba
+let goToTheTopBtn = () =>{
+	window.location ="#container";
+};
+
 //Carga la API de visualización (charts)
 google.charts.load('current', {'packages':['corechart']});
 //Sección de botones
 document.getElementById("computeStatsButton").addEventListener("click", computeStats);
 document.getElementById("pokeBallBtn").addEventListener("click", condition);
 document.getElementById("pokeBallGif").addEventListener("click", showAllPokemons);
+document.getElementById("goToTheTopButton").addEventListener("click", goToTheTopBtn);

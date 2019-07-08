@@ -9,9 +9,9 @@
   </head>
 
   <body>
-    <section class= "container">
+    <section class= "container" id="container">
       <!-- Se agrega sección de inicio-->
-      <section class= "welcomePage">
+      <section class= "welcomePage" id="welcomePage">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <img class="principalLogo" src="images/Pokemonlogo.png" alt="logo">
         <video class="pokemonVideo" controls autoplay muted>
@@ -23,8 +23,6 @@
         <img class="computeStatsButton" id="computeStatsButton" src="images/Pokedex.png" alt="Show Statistics Button">
         <img class="clickMeImg" id="clickMe2" src="images/clickme2.png" alt="See statistics arrow">
       </section>
-
-      <!-- Se agrega sección de filtrado y ordenado-->
       <aside class="filterOptions" id="filterOptions">
         <ul>
           <li><h3>Sort by:</h3></li>
@@ -61,13 +59,17 @@
           <li><img class="pokeBallBtn" id="pokeBallBtn" src="images/Pokeball.png" alt="Pokeball Button"></li>
         </ul>
       </aside>
+      <!-- Se agrega sección de filtrado y ordenado-->
       <section class="pokemonListFiltered" id="pokemonListFiltered">
         <!-- Aquí se mostrarán las tarjetas de los Pokemon filtradas y ordenadas-->
       </section>
       <!-- Se agrega sección de estadísticas-->
       <section class="pokemonStatisticsSec" id="pokemonStatisticsSec">
-            <!-- Aquí se mostrarán en tabla los resultados de las estadísticas-->
+        <!-- Aquí se mostrarán en tabla los resultados de las estadísticas-->
       </section>
+      <img class="goToTheTopButton" id="goToTheTopButton" src="images/goTop.png" alt="Go to the Top">
+    </section>
+
     <!-- Links para ligar los archivos javascript-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="./data/pokemon/pokemon.js"></script>
