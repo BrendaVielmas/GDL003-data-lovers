@@ -30,7 +30,7 @@ let condition = () => {
 		<p><h3>${pokemon.name}</h3></p>
 		<p>Id: ${pokemon.id}</p>
 		<p>Type: ${pokemon.type}</p>
-		<p>Weaknesses: ${pokemon.weaknesses}</p>
+		<p>Weaknesses: ${pokemon.weaknesses.toString().replace(/,/g,", ")}</p>
 		</section>`;
 	});
 };
