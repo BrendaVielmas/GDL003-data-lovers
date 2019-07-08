@@ -56,9 +56,9 @@ let computeStats =() => {
     //Definir opciones de la gráfica
 		let optionsOfChart = {
 			"title":"How Many Pokemons Total By Type",
-			 colors:["#FECD05"],
-			 backgroundColor: {fillColor:"#F0EEF1", fillOpacity:0.8},
-		 };
+			colors:["#FECD05"],
+			backgroundColor: {fillColor:"#F0EEF1", fillOpacity:0.8},
+		};
 	//Crear y dibujar la gráfica pasando las opciones anteriores
 	let chart = new google.visualization.BarChart(pokemonStatistics);
 	chart.draw(dataTable, optionsOfChart);
